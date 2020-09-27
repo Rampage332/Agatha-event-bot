@@ -4,8 +4,8 @@ require 'dotenv/load'
 require 'pry'
 
 @agatha_bot = Discordrb::Commands::CommandBot.new(
-  token: 'NzQwOTI5Mjc3MzE4Mzk4MDAz.XywKKQ.CG2DeUDtqC187ORU9Vxz6jetQbo',
-  client_id: '2xnVMHdkCtTlHt9ReQttN1OngHztnqIX', prefix: '?',
+  token: ENV["TOKEN"],
+  client_id: ENV["C_ID"], prefix: '?',
   help_command: :comlist,
   ignore_bots: true
 )

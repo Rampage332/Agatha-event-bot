@@ -1,1 +1,1 @@
-worker:bundle exec ruby init.rb
+web:bundle exec ruby init.rb

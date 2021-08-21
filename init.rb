@@ -6,8 +6,8 @@ require 'dotenv/load'
 require 'pry'
 
 @agatha_bot = Discordrb::Commands::CommandBot.new(
-  token:"NzQwOTI5Mjc3MzE4Mzk4MDAz.XywKKQ.HXA9xrblqzXVSha9Yl6Nyto26eQ",
-  client_id:"740929277318398003",
+  token: ENV["TOKEN"],
+  client_id: ENV["C_ID"],
   prefix: ["?", "<@740929277318398003>", "<@!740929277318398003>"],
   help_command: :comlist,
   spaces_allowed: true,

@@ -6,199 +6,199 @@ class EventList
   attr_accessor :event_list
 
   NEW_EVENT_LIST = [
-      {
-         day: 0,
-         time: 0,
-         event_name: "clean"
-      },{
-         day: 0,
-         time: 1,
-         event_name: "power"
-      },{
-         day: 0,
-         time: 2,
-         event_name: "research"
-      },{
-         day: 0,
-         time: 3,
-         event_name: "build"
-      },{
-         day: 0,
-         time: 4,
-         event_name: "troops"
-      },{
-         day: 0,
-         time: 5,
-         event_name: "wish"
-      },{
-         day: 1,
-         time: 0,
-         event_name: "build"
-      },{
-         day: 1,
-         time: 1,
-         event_name: "troops"
-      },{
-         day: 1,
-         time: 2,
-         event_name: "wish"
-      },{
-         day: 1,
-         time: 3,
-         event_name: "rune"
-      },{
-         day: 1,
-         time: 4,
-         event_name: "power"
-      },{
-         day: 1,
-         time: 5,
-         event_name: "research"
-      },{
-         day: 2,
-         time: 0,
-         event_name: "troops"
-      },{
-         day: 2,
-         time: 1,
-         event_name: "wish"
-      },{
-         day: 2,
-         time: 2,
-         event_name: "clean"
-      },{
-         day: 2,
-         time: 3,
-         event_name: "power"
-      },{
-         day: 2,
-         time: 4,
-         event_name: "research"
-      },{
-         day: 2,
-         time: 5,
-         event_name: "build"
-      },{
-         day: 3,
-         time: 0,
-         event_name: "wolf"
-      },{
-         day: 3,
-         time: 1,
-         event_name: "wolf"
-      },{
-         day: 3,
-         time: 2,
-         event_name: "troops"
-      },{
-         day: 3,
-         time: 3,
-         event_name: "wish"
-      },{
-         day: 3,
-         time: 4,
-         event_name: "power"
-      },{
-         day: 3,
-         time: 5,
-         event_name: "rune"
-      },{
-         day: 4,
-         time: 0,
-         event_name: "power"
-      },{
-         day: 4,
-         time: 1,
-         event_name: "rune"
-      },{
-         day: 4,
-         time: 2,
-         event_name: "research"
-      },{
-         day: 4,
-         time: 3,
-         event_name: "build"
-      },{
-         day: 4,
-         time: 4,
-         event_name: "clean"
-      },{
-         day: 4,
-         time: 5,
-         event_name: "troops"
-      },{
-         day: 5,
-         time: 0,
-         event_name: "barb"
-      },{
-         day: 5,
-         time: 1,
-         event_name: "barb"
-      },{
-         day: 5,
-         time: 2,
-         event_name: "barb"
-      },{
-         day: 5,
-         time: 3,
-         event_name: "barb"
-      },{
-         day: 5,
-         time: 4,
-         event_name: "barb"
-      },{
-         day: 5,
-         time: 5,
-         event_name: "barb"
-      },{
-         day: 6,
-         time: 0,
-         event_name: "power"
-      },{
-         day: 6,
-         time: 1,
-         event_name: "research"
-      },{
-         day: 6,
-         time: 2,
-         event_name: "build"
-      },{
-         day: 6,
-         time: 3,
-         event_name: "troops"
-      },{
-         day: 6,
-         time: 4,
-         event_name: "wish"
-      },{
-         day: 6,
-         time: 5,
-         event_name: "clean"
-      },{
-         day: 3,
-         time: 0,
-         event_name: "tiger"
-      },{
-         day: 3,
-         time: 1,
-         event_name: "tiger"
-      },{
-         day: 3,
-         time: 2,
-         event_name: "tiger"
-      },{
-         day: 3,
-         time: 3,
-         event_name: "tiger"
-      },{
-         day: 3,
-         time: 4,
-         event_name: "tiger"
-      },{
-         day: 3,
-         time: 5,
-         event_name: "tiger"
-      }
+  {
+     day: 0,
+     time: 0,
+     event_name: "clean"
+  },{
+     day: 0,
+     time: 0,
+     event_name: "troops"
+  },{
+     day: 0,
+     time: 1,
+     event_name: "power"
+  },{
+     day: 0,
+     time: 2,
+     event_name: "research"
+  },{
+     day: 0,
+     time: 3,
+     event_name: "rune"
+  },{
+     day: 0,
+     time: 4,
+     event_name: "troops"
+  },{
+     day: 0,
+     time: 5,
+     event_name: "wish"
+  },{
+     day: 1,
+     time: 0,
+     event_name: "research"
+  },{
+     day: 1,
+     time: 1,
+     event_name: "troops"
+  },{
+     day: 1,
+     time: 2,
+     event_name: "wish"
+  },{
+     day: 1,
+     time: 3,
+     event_name: "clean"
+  },{
+     day: 1,
+     time: 4,
+     event_name: "power"
+  },{
+     day: 1,
+     time: 5,
+     event_name: "build"
+  },{
+     day: 2,
+     time: 0,
+     event_name: "troops"
+  },{
+     day: 2,
+     time: 1,
+     event_name: "wish"
+  },{
+     day: 2,
+     time: 2,
+     event_name: "clean"
+  },{
+     day: 2,
+     time: 3,
+     event_name: "power"
+  },{
+     day: 2,
+     time: 4,
+     event_name: "research"
+  },{
+     day: 2,
+     time: 5,
+     event_name: "rune"
+  },{
+     day: 3,
+     time: 0,
+     event_name: "research"
+  },{
+     day: 3,
+     time: 1,
+     event_name: "rune"
+  },{
+     day: 3,
+     time: 2,
+     event_name: "troops"
+  },{
+     day: 3,
+     time: 3,
+     event_name: "wish"
+  },{
+     day: 3,
+     time: 4,
+     event_name: "wolf"
+  },{
+     day: 3,
+     time: 5,
+     event_name: "wolf"
+  },{
+     day: 4,
+     time: 0,
+     event_name: "rune"
+  },{
+     day: 4,
+     time: 1,
+     event_name: "wish"
+  },{
+     day: 4,
+     time: 2,
+     event_name: "power"
+  },{
+     day: 4,
+     time: 3,
+     event_name: "research"
+  },{
+     day: 4,
+     time: 4,
+     event_name: "build"
+  },{
+     day: 4,
+     time: 5,
+     event_name: "troops"
+  },{
+     day: 5,
+     time: 0,
+     event_name: "wish"
+  },{
+     day: 5,
+     time: 3,
+     event_name: "barb"
+  },{
+     day: 5,
+     time: 4,
+     event_name: "barb"
+  },{
+     day: 5,
+     time: 5,
+     event_name: "barb"
+  },{
+     day: 6,
+     time: 0,
+     event_name: "barb"
+  },{
+     day: 6,
+     time: 1,
+     event_name: "barb"
+  },{
+     day: 6,
+     time: 2,
+     event_name: "barb"
+  },{
+     day: 6,
+     time: 3,
+     event_name: "power"
+  },{
+     day: 6,
+     time: 4,
+     event_name: "research"
+  },{
+     day: 6,
+     time: 5,
+     event_name: "clean"
+  },{
+     day: 6,
+     time: 5,
+     event_name: "rune"
+  },{
+     day: 3,
+     time: 0,
+     event_name: "tiger"
+  },{
+     day: 3,
+     time: 1,
+     event_name: "tiger"
+  },{
+     day: 3,
+     time: 2,
+     event_name: "tiger"
+  },{
+     day: 3,
+     time: 3,
+     event_name: "tiger"
+  },{
+     day: 3,
+     time: 4,
+     event_name: "tiger"
+  },{
+     day: 3,
+     time: 5,
+     event_name: "tiger"
+  }
    ]
 
   OLD_EVENT_LIST = [
@@ -208,6 +208,10 @@ class EventList
          event_name: "clean"
       },{
          day: 0,
+         time: 0,
+         event_name: "troops"
+      },{
+         day: 0,
          time: 1,
          event_name: "power"
       },{
@@ -325,15 +329,7 @@ class EventList
       },{
          day: 5,
          time: 0,
-         event_name: "barb"
-      },{
-         day: 5,
-         time: 1,
-         event_name: "barb"
-      },{
-         day: 5,
-         time: 2,
-         event_name: "barb"
+         event_name: "wish"
       },{
          day: 5,
          time: 3,
@@ -349,27 +345,31 @@ class EventList
       },{
          day: 6,
          time: 0,
-         event_name: "power"
+         event_name: "barb"
       },{
          day: 6,
          time: 1,
-         event_name: "research"
+         event_name: "barb"
       },{
          day: 6,
          time: 2,
-         event_name: "rune"
+         event_name: "barb"
       },{
          day: 6,
          time: 3,
-         event_name: "troops"
+         event_name: "power"
       },{
          day: 6,
          time: 4,
-         event_name: "wish"
+         event_name: "research"
       },{
          day: 6,
          time: 5,
          event_name: "clean"
+      },{
+         day: 6,
+         time: 5,
+         event_name: "rune"
       },{
          day: 3,
          time: 0,

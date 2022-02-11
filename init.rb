@@ -12,7 +12,6 @@ require 'pry'
   help_command: :comlist,
   spaces_allowed: true,
   ignore_bots: true
-  GOOGLE_CREDENTIALS: "credentials.json"
 )
 
 #==========================================================================================

@@ -4,6 +4,7 @@ require_relative 'partner_list'
 require_relative 'honor_list'
 require 'dotenv/load'
 require 'pry'
+require 'google/apis/sheets_v4'
 
 @agatha_bot = Discordrb::Commands::CommandBot.new(
   token: ENV["TOKEN"],

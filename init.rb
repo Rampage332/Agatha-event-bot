@@ -1,8 +1,4 @@
 require 'discordrb'
-require 'google/apis/sheets_v4'
-require 'googleauth'
-require 'googleauth/stores/file_token_store'
-require 'fileutils'
 require_relative 'event_list'
 require_relative 'partner_list'
 require_relative 'honor_list'

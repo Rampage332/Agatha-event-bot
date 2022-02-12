@@ -381,7 +381,7 @@ end
             event.channel.send_embed do |embed|
                     embed.colour = 0xFF4000
                     embed.author = Discordrb::Webhooks::EmbedAuthor.new(name: "349 Players Stats")
-                    embed.title = player_array[0].uppercase
+                    embed.title = player_array[0].capitalize()
                     embed.description = "__                                                                           __"
                     embed.add_field(name: '**Server Rank**', value: player_array[1] , inline: true)
                     embed.add_field(name: "**Overall Score**", value: player_array[2], inline: true)

@@ -362,7 +362,7 @@ end
   
   if player1[0] == "<@!740929277318398003>" || player1[0] == "<@740929277318398003>"
       player1[0] = player1[1]
-      player1[1] = player1[2]
+      player1[1] = player1[2].downcase
       player1[2] = player1[3]
   end
   
@@ -381,7 +381,7 @@ end
             event.channel.send_embed do |embed|
                     embed.colour = 0xFF4000
                     embed.author = Discordrb::Webhooks::EmbedAuthor.new(name: "349 Players Stats")
-                    embed.title = player_array[0]
+                    embed.title = player_array[0].uppercase
                     embed.description = "__                                                                           __"
                     embed.add_field(name: '**Server Rank**', value: player_array[1] , inline: true)
                     embed.add_field(name: "**Overall Score**", value: player_array[2], inline: true)

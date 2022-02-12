@@ -361,30 +361,26 @@ end
   player1 = event.message.content.split(' ')
   
   if player1[0] == "<@!740929277318398003>" || player1[0] == "<@740929277318398003>"
-      player1[0] = player1[1]
-      player1[1] = player1[2].downcase
-      unless player1[3].nil?
-       player1[2] = player1[3].downcase
+      
+      if player1[3].nil?
+         player1[0] = player1[1]
+         player1[1] = player1[2].downcase
+      
+      else
+        player1[0] = player1[1]
+        player1[1] = player1[2].downcase + " " + player1[3].downcase
       end
   end
   
   if player1[1].nil?
     event.respond "Dear #{event.user.mention}, the correct command is @Agatha² playerstats __Your Game Name__, which was submitted in the form."
   end
-  
-  if player1[2].nil?
-      playername = player1[1]
-  
-  else
-      playername = player1[1] + " " + player1[2]
-    
-  end
 
   csv_table = CSV.table("349 Managerial Sheet - AgathaSheet.csv", converters: :all)
   
       player_array = csv_table.find  do |row|
         
-        row.field(:name) == playername
+        row.field(:name) == player1[1]
         
   end
       

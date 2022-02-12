@@ -380,7 +380,6 @@ end
 
             event.channel.send_embed do |embed|
                     embed.colour = 0xFF4000
-                    embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url:"https://i.imgur.com/cyQCCmK.png")
                     embed.author = Discordrb::Webhooks::EmbedAuthor.new(name: "349 Players Stats")
                     embed.title = player_array[0].upcase
                     embed.description = "__                                                                           __"

@@ -368,14 +368,12 @@ end
   end
   
   if player1[1].nil?
-    event.respond "Dear #{event.user.mention}, the correct command is @Agatha playerstats __Your Game Name__, which was submitted in the form."
+    event.respond "Dear #{event.user.mention}, the correct command is @Agatha² playerstats __Your Game Name__, which was submitted in the form."
   end
-  
-  data_file = '349 Managerial Sheet - AgathaSheet.csv'
 
-  CSV.foreach(data_file) do |row|
+  CSV.foreach('349 Managerial Sheet - AgathaSheet.csv') do |row|
   
-    if (row[0].downcase == player1[1].downcase)
+    if (row[0] == player1[1])
           
         player_array.push(row)
 

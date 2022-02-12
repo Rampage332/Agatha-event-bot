@@ -391,6 +391,8 @@ end
                     embed.add_field(name: "**Essentials Score**", value: row[6], inline: true)
                     embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
       
+          
+        end
     end
     
   end

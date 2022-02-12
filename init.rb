@@ -363,11 +363,15 @@ end
   if player1[0] == "<@!740929277318398003>" || player1[0] == "<@740929277318398003>"
       player1[0] = player1[1]
       player1[1] = player1[2].downcase
-      player1[2] = player1[3]
+      player1[2] = player1[3].downcase
   end
   
   if player1[1].nil?
     event.respond "Dear #{event.user.mention}, the correct command is @Agatha² playerstats __Your Game Name__, which was submitted in the form."
+  end
+  
+  unless player1[2].nil?
+      player1[1] = player1[1] + " " + player1[2]
   end
 
   csv_table = CSV.table("349 Managerial Sheet - AgathaSheet.csv", converters: :all)

@@ -381,7 +381,7 @@ end
             event.channel.send_embed do |embed|
                     embed.colour = 0xFF4000
                     
-                    if player_array[1] >= 85
+                    if player_array[2].to_i >= 84
                         
                         embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url:" https://i.imgur.com/cyQCCmK.png")
                     

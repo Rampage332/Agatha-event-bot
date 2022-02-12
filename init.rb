@@ -378,16 +378,9 @@ end
         
   end
 
-  
-  if player_array[0].nil?
-    
-    event.respond "Dear #{event.user.mention}, The player name you have provided was not found."
-    
-  else
-    
             event.channel.send_embed do |embed|
                     embed.colour = 0xFF4000
-                    embed.author = Discordrb::Webhooks::EmbedAuthor.new(name: "Honor Research Cost")
+                    embed.author = Discordrb::Webhooks::EmbedAuthor.new(name: "349 Players Stats")
                     embed.title = player_array[0]
                     embed.description = "__                                                                           __"
                     embed.add_field(name: '**Server Rank**', value: player_array[1] , inline: true)
@@ -399,9 +392,7 @@ end
                     embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
       
           
-        end
-    
-  end  
+            end
   
 end
 #==========================================================================================

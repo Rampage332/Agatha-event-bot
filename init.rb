@@ -380,6 +380,13 @@ end
 
             event.channel.send_embed do |embed|
                     embed.colour = 0xFF4000
+                    
+                    if player_array[1] >= 85
+                        
+                        embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url:" https://i.imgur.com/cyQCCmK.png")
+                    
+                    end
+                    
                     embed.author = Discordrb::Webhooks::EmbedAuthor.new(name: "349 Players Stats")
                     embed.title = player_array[0].upcase
                     embed.description = "__                                                                           __"
@@ -389,6 +396,9 @@ end
                     embed.add_field(name: "**Runes Score**", value: "#{player_array[4]}%", inline: true)
                     embed.add_field(name: '**Equipment Score**', value: "#{player_array[5]}%", inline: true)
                     embed.add_field(name: "**Essentials Score**", value: "#{player_array[6]}%", inline: true)
+                    embed.add_field(name: "", value: "", inline: true)
+                    embed.add_field(name: "", value: "", inline: true)
+                    embed.add_field(name: "", value: "Player stats will be updated every Thursday night.", inline: true)
                     embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'Done by RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
       
           

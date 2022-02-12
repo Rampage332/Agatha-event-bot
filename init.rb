@@ -4,6 +4,7 @@ require_relative 'partner_list'
 require_relative 'honor_list'
 require 'dotenv/load'
 require 'pry'
+require 'csv'
 
 @agatha_bot = Discordrb::Commands::CommandBot.new(
   token: ENV["TOKEN"],
@@ -353,7 +354,48 @@ end
         end
 
 end
+#==========================================================================================
+#Player Stats Function
 
+@agatha_bot.command(:playerstats) do |event|
+  player1 = event.message.content.split(' ')
+  
+  if player1[0] == "<@!740929277318398003>" || player1[0] == "<@740929277318398003>"
+      player1[0] = player1[1]
+      player1[1] = player1[2]
+      player1[2] = player1[3]
+  end
+  
+  if player1[1].nil?
+    event.respond "Dear #{event.user.mention}, the correct command is @Agatha playerstats __Your Game Name__, which was submitted in the form."
+  end
+  
+  data_file = '349 Managerial Sheet - AgathaSheet.csv'
+
+  CSV.foreach(data_file) do |row|
+  
+    if (row[0].downcase == player1[1].downcase)
+          
+        player_array.push(row)
+      
+        event.channel.send_embed do |embed|
+                    embed.colour = 0xFF4000
+                    embed.author = Discordrb::Webhooks::EmbedAuthor.new(name: "Honor Research Cost")
+                    embed.title = row[0]
+                    embed.description = "__                                                                           __"
+                    embed.add_field(name: '**Server Rank**', value: row[1] , inline: true)
+                    embed.add_field(name: "**Overall Score**", value: row[2], inline: true)
+                    embed.add_field(name: '**Viler Score**', value: row[3], inline: true)
+                    embed.add_field(name: "**Runes Score**", value: row[4], inline: true)
+                    embed.add_field(name: '**Equipment Score**', value: row[5], inline: true)
+                    embed.add_field(name: "**Essentials Score**", value: row[6], inline: true)
+                    embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
+      
+    end
+    
+  end
+  
+end
 #==========================================================================================
 
 #Partners Guide Function

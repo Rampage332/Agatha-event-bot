@@ -384,7 +384,7 @@ end
         
   end
       
-      if player_array[1].nil?
+      if player_array.nil?
           
           event.respond "Dear #{event.user.mention}, The player you have specified is not listed. Kindly double check the name or contact Rampage"
           

@@ -374,7 +374,7 @@ end
   
       player_array = csv_table.find  do |row|
         
-        row.field(:name) == player1[1].downcase
+        row.field(:name) == player1[1]
         
   end
 

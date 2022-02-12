@@ -373,6 +373,7 @@ end
   end
   
   unless player1[2].nil?
+      player1[1] << " "
       player1[1] << player1[2]
   end
 

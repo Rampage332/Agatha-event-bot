@@ -382,6 +382,10 @@ end
           
           img_url = "https://i.imgur.com/cyQCCmK.png"
           
+      elsif player_array[2] <= 84 && player_array[2] >= 75
+      
+          img_url = "https://i.imgur.com/klUjqlO.png"
+          
       end
 
             event.channel.send_embed do |embed|

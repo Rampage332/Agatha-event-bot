@@ -371,15 +371,14 @@ end
     event.respond "Dear #{event.user.mention}, the correct command is @Agatha² playerstats __Your Game Name__, which was submitted in the form."
   end
 
-  CSV.foreach('349 Managerial Sheet - AgathaSheet.csv') do |row|
+  csv_table = CSV.table("349 Managerial Sheet - AgathaSheet.csv", converters: :all)
   
-    if (row[0] == player1[1])
-          
-        player_array.push(row)
-
-    end
-    
+      player_array = csv_table.find  do |row|
+        
+        row.field(:name) == player1[1].downcase
+        
   end
+
   
   if player_array[0].nil?
     

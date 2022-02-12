@@ -359,6 +359,7 @@ end
 
 @agatha_bot.command(:playerstats) do |event|
   player1 = event.message.content.split(' ')
+  player_array = []
   
   if player1[0] == "<@!740929277318398003>" || player1[0] == "<@740929277318398003>"
       player1[0] = player1[1]
@@ -377,25 +378,34 @@ end
     if (row[0].downcase == player1[1].downcase)
           
         player_array.push(row)
-      
-        event.channel.send_embed do |embed|
+
+    end
+    
+  end
+  
+  if player_array[0].nil?
+    
+    event.respond "Dear #{event.user.mention}, The player name you have provided was not found."
+    
+  else
+    
+            event.channel.send_embed do |embed|
                     embed.colour = 0xFF4000
                     embed.author = Discordrb::Webhooks::EmbedAuthor.new(name: "Honor Research Cost")
-                    embed.title = row[0]
+                    embed.title = player_array[0]
                     embed.description = "__                                                                           __"
-                    embed.add_field(name: '**Server Rank**', value: row[1] , inline: true)
-                    embed.add_field(name: "**Overall Score**", value: row[2], inline: true)
-                    embed.add_field(name: '**Viler Score**', value: row[3], inline: true)
-                    embed.add_field(name: "**Runes Score**", value: row[4], inline: true)
-                    embed.add_field(name: '**Equipment Score**', value: row[5], inline: true)
-                    embed.add_field(name: "**Essentials Score**", value: row[6], inline: true)
+                    embed.add_field(name: '**Server Rank**', value: player_array[1] , inline: true)
+                    embed.add_field(name: "**Overall Score**", value: player_array[2], inline: true)
+                    embed.add_field(name: '**Viler Score**', value: player_array[3], inline: true)
+                    embed.add_field(name: "**Runes Score**", value: player_array[4], inline: true)
+                    embed.add_field(name: '**Equipment Score**', value: player_array[5], inline: true)
+                    embed.add_field(name: "**Essentials Score**", value: player_array[6], inline: true)
                     embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
       
           
         end
-    end
     
-  end
+  end  
   
 end
 #==========================================================================================

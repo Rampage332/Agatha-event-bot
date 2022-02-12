@@ -384,6 +384,12 @@ end
         
   end
       
+      if player_array[1].nil?
+          
+          event.respond "Dear #{event.user.mention}, The player you have specified is not listed. Kindly double check the name or contact Rampage"
+          
+      end
+      
       if player_array[2] > 84
           
           img_url = "https://i.imgur.com/cyQCCmK.png"

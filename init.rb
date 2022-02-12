@@ -372,16 +372,19 @@ end
     event.respond "Dear #{event.user.mention}, the correct command is @Agatha² playerstats __Your Game Name__, which was submitted in the form."
   end
   
-  unless player1[2].nil?
-      player1[1] << " "
-      player1[1] << player1[2]
+  if player1[2].nil?
+      playername = player1[1]
+  
+  else
+      playername = player1[1] + " " + player1[2]
+    
   end
 
   csv_table = CSV.table("349 Managerial Sheet - AgathaSheet.csv", converters: :all)
   
       player_array = csv_table.find  do |row|
         
-        row.field(:name) == player1[1]
+        row.field(:name) == playername
         
   end
       

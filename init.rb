@@ -378,7 +378,7 @@ end
         
   end
       
-      if player1[2] > 84
+      if player_array[2] > 84
           
           img_url = "https://i.imgur.com/cyQCCmK.png"
           

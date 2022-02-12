@@ -389,9 +389,6 @@ end
                     embed.add_field(name: "**Runes Score**", value: "#{player_array[4]}%", inline: true)
                     embed.add_field(name: '**Equipment Score**', value: "#{player_array[5]}%", inline: true)
                     embed.add_field(name: "**Essentials Score**", value: "#{player_array[6]}%", inline: true)
-                    embed.add_field(name: "", value: "", inline: true)
-                    embed.add_field(name: "", value: "", inline: true)
-                    embed.add_field(name: "", value: "Player stats will be updated every Thursday night.", inline: true)
                     embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'Done by RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
       
           

@@ -359,7 +359,6 @@ end
 
 @agatha_bot.command(:playerstats) do |event|
   player1 = event.message.content.split(' ')
-  player_array = []
   
   if player1[0] == "<@!740929277318398003>" || player1[0] == "<@740929277318398003>"
       player1[0] = player1[1]

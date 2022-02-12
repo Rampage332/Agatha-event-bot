@@ -363,7 +363,9 @@ end
   if player1[0] == "<@!740929277318398003>" || player1[0] == "<@740929277318398003>"
       player1[0] = player1[1]
       player1[1] = player1[2].downcase
-      player1[2] = player1[3].downcase
+      unless player1[3].nil?
+       player1[2] = player1[3].downcase
+      end
   end
   
   if player1[1].nil?

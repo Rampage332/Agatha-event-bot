@@ -384,7 +384,23 @@ end
           
       elsif player_array[2] <= 84 && player_array[2] >= 75
       
-          img_url = "https://i.imgur.com/klUjqlO.png"
+          img_url = "https://i.imgur.com/taqtJqO.png"
+          
+      elsif player_array[2] <= 74 && player_array[2] >= 65
+          
+              img_url = "https://i.imgur.com/klUjqlO.png"
+              
+      elsif player_array[2] <= 64 && player_array[2] >= 55
+              
+              img_url = "https://i.imgur.com/SuiZ5Vx.png"
+              
+      elsif player_array[2] <= 54 && player_array[2] >= 45
+                      
+              img_url = "https://i.imgur.com/GtRul0z.png"
+              
+      else
+      
+              img_url = "https://i.imgur.com/klUjqlO.png"
           
       end
 

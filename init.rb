@@ -378,7 +378,7 @@ end
         
   end
       
-      if player1[2].to_i >= 85
+      if player1[2].to_i > 84
           
           img_url = "https://i.imgur.com/cyQCCmK.png"
           

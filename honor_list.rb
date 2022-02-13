@@ -88,18 +88,18 @@ class HonorCost
         case honorcode
             
             when 'op' then research_title = "Outpost VI"
-            when 'trhp' then research_title = "Troop Health" + " - Level " + @level
-            when 'trdef' then research_title = "Troop Defense" + " - Level " + @level
-            when 'tratk' then research_title = "Troop Attack" + " - Level " + @level
-            when 'watk' then research_title = "Warrior Attack" + " " + @tier + " - Level " + @level
-            when 'wdef' then research_title = "Warrior Defense" + " " + @tier + " - Level " + @level
-            when 'whp' then research_title = "Warrior Health" + " " + @tier + " - Level " + @level
-            when 'shatk' then research_title = "Shaman Attack" + " " + @tier + " - Level " + @level
-            when 'shdef' then research_title = "Shaman Defense" + " " + @tier + " - Level " + @level
-            when 'shhp' then research_title = "Shaman Health" + " " + @tier + " - Level " + @level
-            when 'bmatk' then research_title = "Beastmaster Attack" + " " + @tier + " - Level " + @level
-            when 'bmdef' then research_title = "Beastmaster Defense" + " " + @tier + " - Level " + @level
-            when 'bmhp' then research_title = "Beastmaster Health" + " " + @tier + " - Level " + @level
+            when 'trhp' then research_title = "Troop Health ❤️" + " - Level " + @level
+            when 'trdef' then research_title = "Troop Defense 🛡" + " - Level " + @level
+            when 'tratk' then research_title = "Troop Attack ⚔️" + " - Level " + @level
+            when 'watk' then research_title = "Warrior Attack ⚔️" + " " + @tier + " - Level " + @level
+            when 'wdef' then research_title = "Warrior Defense 🛡" + " " + @tier + " - Level " + @level
+            when 'whp' then research_title = "Warrior Health ❤️" + " " + @tier + " - Level " + @level
+            when 'shatk' then research_title = "Shaman Attack ⚔️" + " " + @tier + " - Level " + @level
+            when 'shdef' then research_title = "Shaman Defense 🛡" + " " + @tier + " - Level " + @level
+            when 'shhp' then research_title = "Shaman Health ❤️" + " " + @tier + " - Level " + @level
+            when 'bmatk' then research_title = "Beastmaster Attack ⚔️" + " " + @tier + " - Level " + @level
+            when 'bmdef' then research_title = "Beastmaster Defense 🛡" + " " + @tier + " - Level " + @level
+            when 'bmhp' then research_title = "Beastmaster Health ❤️" + " " + @tier + " - Level " + @level
         end
 
         research_title

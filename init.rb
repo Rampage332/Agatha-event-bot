@@ -388,7 +388,7 @@ end
           
           event.respond "Dear #{event.user.mention}, The player you have specified is not listed. Kindly double check the name or contact Rampage."
           event.channel.send_embed do |embed|
-             embed.add_field(name: ' ', value: '[Submission Form](https://forms.gle/Wyi49Q6BMzKsw1QK6)');
+             embed.author = Discordrb::Webhooks::EmbedAuthor.new(name: 'Submission Form', url: 'https://forms.gle/Wyi49Q6BMzKsw1QK6')
           end
           
       end

@@ -387,9 +387,9 @@ end
       if player_array.nil?
           
           event.respond "Dear #{event.user.mention}, The player you have specified is not listed. Kindly double check the name or contact Rampage."
-          embed = discord.Embed()
-          embed.description = "[Submission Form](https://forms.gle/Wyi49Q6BMzKsw1QK6)."
-          await ctx.send(embed=embed)
+          channel.send_embed do |embed|
+             embed.addField(" ", "[Submission Form](https://forms.gle/Wyi49Q6BMzKsw1QK6)");
+          end
           
       end
       

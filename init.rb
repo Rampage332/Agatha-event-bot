@@ -386,7 +386,7 @@ end
       
       if player_array.nil?
           
-          event.respond "Dear #{event.user.mention}, The player you have specified is not listed. Kindly double check the name or contact Rampage"
+          event.respond "Dear #{event.user.mention}, The player you have specified is not listed. Kindly double check the name or contact Rampage. #{<%= link_to "Submission Form", "https://forms.gle/Wyi49Q6BMzKsw1QK6" %>}"
           
       end
       

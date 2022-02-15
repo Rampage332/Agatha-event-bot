@@ -388,7 +388,7 @@ end
           
           event.respond "Dear #{event.user.mention}, The player you have specified is not listed. Kindly double check the name or contact Rampage."
           event.channel.send_embed do |embed|
-             embed.addField(" ", "[Submission Form](https://forms.gle/Wyi49Q6BMzKsw1QK6)");
+             embed.add_Field(" ", "[Submission Form](https://forms.gle/Wyi49Q6BMzKsw1QK6)");
           end
           
       end

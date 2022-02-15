@@ -387,7 +387,7 @@ end
       if player_array.nil?
           
           event.respond "Dear #{event.user.mention}, The player you have specified is not listed. Kindly double check the name or contact Rampage."
-          channel.send_embed do |embed|
+          event.channel.send_embed do |embed|
              embed.addField(" ", "[Submission Form](https://forms.gle/Wyi49Q6BMzKsw1QK6)");
           end
           

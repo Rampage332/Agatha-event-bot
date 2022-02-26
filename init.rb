@@ -357,7 +357,7 @@ end
 #==========================================================================================
 #Player Stats Function
 
-@agatha_bot.command(:playerstats) do |event|
+@agatha_bot.command(:rank) do |event|
   player1 = event.message.content.split(' ')
   
   if player1[0] == "<@!740929277318398003>" || player1[0] == "<@740929277318398003>"

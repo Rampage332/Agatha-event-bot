@@ -423,11 +423,11 @@ end
                     embed.author = Discordrb::Webhooks::EmbedAuthor.new(name: "349 Players Stats")
                     embed.title = player_array[0].upcase
                     embed.description = "__                                                                           __"
-                    embed.add_field(name: '**Server Rank**', value: player_array[1], inline: true)
+                    embed.add_field(name: '**Server Rank** <:rank:947154489452920892>', value: player_array[1], inline: true)
                     embed.add_field(name: "**Overall Score**", value: "#{player_array[2]}%", inline: true)
                     embed.add_field(name: '**Viler Score** <:viler:947155044577448047>', value: "#{player_array[3]}%", inline: true)
-                    embed.add_field(name: "**Runes Score**", value: "#{player_array[4]}%", inline: true)
-                    embed.add_field(name: '**Equipment Score**', value: "#{player_array[5]}%", inline: true)
+                    embed.add_field(name: "**Runes Score** <:Runes:947154489121599519>", value: "#{player_array[4]}%", inline: true)
+                    embed.add_field(name: '**Equipment Score** <:equipment:947154489276792862>', value: "#{player_array[5]}%", inline: true)
                     embed.add_field(name: "**Essentials Score**", value: "#{player_array[6]}%", inline: true)
                     embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'Done by RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
       

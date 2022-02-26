@@ -373,7 +373,7 @@ end
   end
   
   if player1[1].nil?
-    event.respond "Dear #{event.user.mention}, the correct command is @Agatha² playerstats __Your Game Name__, which was submitted in the form."
+    event.respond "Dear #{event.user.mention}, the correct command is @Agatha² rank __Your Game Name__, which was submitted in the form."
   end
 
   csv_table = CSV.table("349 Managerial Sheet - AgathaSheet.csv", converters: :all)

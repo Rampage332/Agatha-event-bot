@@ -335,12 +335,12 @@ end
                     embed.author = Discordrb::Webhooks::EmbedAuthor.new(name: "Honor Research Cost")
                     embed.title = "#{honor_cost.Get_Research_Title()}"
                     embed.description = "__                                                                           __"
-                    embed.add_field(name: '**Wood Cost** 🪵', value: "#{honor_cost.Get_Wood_Cost()}" , inline: true)
-                    embed.add_field(name: "**Meat Cost** 🍖", value: "#{honor_cost.Get_Meat_Cost()}", inline: true)
-                    embed.add_field(name: '**Mana Cost** 💎', value: "#{honor_cost.Get_Mana_Cost()}", inline: true)
-                    embed.add_field(name: "**Stone Cost** 🪨", value: "#{honor_cost.Get_Stone_Cost()}", inline: true)
-                    embed.add_field(name: '**Ivory Cost** 🦣', value: "#{honor_cost.Get_Ivory_Cost()}", inline: true)
-                    embed.add_field(name: "**Honor Marks Cost**", value: "#{honor_cost.Get_Honors_Cost()}", inline: true)
+                    embed.add_field(name: '**Wood Cost** <:lumber:947154392971358270>', value: "#{honor_cost.Get_Wood_Cost()}" , inline: true)
+                    embed.add_field(name: "**Meat Cost** <:meat:947154392891666513>", value: "#{honor_cost.Get_Meat_Cost()}", inline: true)
+                    embed.add_field(name: '**Mana Cost** <:mana:947154393021689876>', value: "#{honor_cost.Get_Mana_Cost()}", inline: true)
+                    embed.add_field(name: "**Stone Cost** <:stone:947154393424343060>", value: "#{honor_cost.Get_Stone_Cost()}", inline: true)
+                    embed.add_field(name: '**Ivory Cost** <:ivory:947154393134932008>', value: "#{honor_cost.Get_Ivory_Cost()}", inline: true)
+                    embed.add_field(name: "**Honor Marks Cost** <:marks:947154393319473182>", value: "#{honor_cost.Get_Honors_Cost()}", inline: true)
                     embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
                 end
             

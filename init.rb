@@ -425,7 +425,7 @@ end
                     embed.description = "__                                                                           __"
                     embed.add_field(name: '**Server Rank**', value: player_array[1], inline: true)
                     embed.add_field(name: "**Overall Score**", value: "#{player_array[2]}%", inline: true)
-                    embed.add_field(name: '**Viler Score**', value: "#{player_array[3]}%", inline: true)
+                    embed.add_field(name: ':viler: **Viler Score**', value: "#{player_array[3]}%", inline: true)
                     embed.add_field(name: "**Runes Score**", value: "#{player_array[4]}%", inline: true)
                     embed.add_field(name: '**Equipment Score**', value: "#{player_array[5]}%", inline: true)
                     embed.add_field(name: "**Essentials Score**", value: "#{player_array[6]}%", inline: true)

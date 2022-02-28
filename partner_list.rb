@@ -34,6 +34,8 @@ class PartnerList
         when 'marksman' then displayname = 'Marksman'
         when 'ghost' then displayname = 'Lil Ghost'
         when 'scarecrow' then displayname = 'Scarecrow'
+        when 'thana' then displayname = 'Thana the Vampire'
+        when 'dragoness' then displayname = 'Weeping Dragoness'
         
     end
     
@@ -84,6 +86,8 @@ def Red_Partners()
                         when 'medusa' then image_url = "https://i.imgur.com/YeXYSLs.jpg"
                         when 'marksman' then image_url = "https://i.imgur.com/JDBieV5.jpg"
                         when 'ghost' then image_url = "https://i.imgur.com/QftSqWB.jpg"
+                        when 'thana' then image_url = "https://i.imgur.com/Kle9kFm.png"
+                        when 'dragoness' then image_url = "https://i.imgur.com/MoUgZRU.png"
                         
                         image_url
     end
@@ -114,6 +118,8 @@ def Green_Partners()
                         when 'tricky' then image_url = "https://i.imgur.com/hHfAHDj.jpg"
                         when 'medusa' then image_url = "https://i.imgur.com/PWophhu.jpg"
                         when 'scarecrow' then image_url = "https://i.imgur.com/T3JbzRQ.jpg"
+                        when 'thana' then image_url = "https://i.imgur.com/ukVP7db.png"
+                        when 'dragoness' then image_url = "https://i.imgur.com/RX8SHWO.png"
                         
                         image_url
     end
@@ -143,6 +149,8 @@ def Blue_Partners()
                         when 'panda' then image_url = "https://i.imgur.com/dd7ME9O.jpg"
                         when 'tricky' then image_url = "https://i.imgur.com/zBK0zgQ.jpg"
                         when 'medusa' then image_url = "https://i.imgur.com/TIhRCpx.jpg"
+                        when 'thana' then image_url = "https://i.imgur.com/bF2EkGx.png"
+                        when 'dragoness' then image_url = "https://i.imgur.com/zkNs1s1.png"
                         
                         image_url
     end

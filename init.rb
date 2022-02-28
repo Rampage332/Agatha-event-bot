@@ -448,7 +448,7 @@ end
       partner1[2] = partner1[3]
   end
   
-  partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduchess','prince','ursa','bape','judge','chacha','woody','tusk','executor','mr.dagger','nomad','warmaiden','panda','tricky','medusa','marksman','ghost','scarecrow']
+  partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduchess','prince','ursa','bape','judge','chacha','woody','tusk','executor','mr.dagger','nomad','warmaiden','panda','tricky','medusa','marksman','ghost','scarecrow','thana','dragoness']
   
   if partner1[1].nil?
       event.respond "Dear #{event.user.mention}, the correct command is @Agatha² partner __color__ __partner name__."
@@ -485,6 +485,8 @@ end
                 > 21- Red Marksman
                 > 22- Red Ghost
                 > 23- Green Scarecrow
+                > 24- Thana
+                > 25- Dragoness
 
                 Example: @Agatha² partner Blue Rockwell
                 "

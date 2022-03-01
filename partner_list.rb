@@ -89,7 +89,7 @@ def Red_Partners()
                         when 'ghost' then image_url = "https://i.imgur.com/QftSqWB.jpg"
                         when 'thana' then image_url = "https://i.imgur.com/Kle9kFm.png"
                         when 'dragoness' then image_url = "https://i.imgur.com/MoUgZRU.png"
-                        when 'messenger' then image_url ="https://i.imgur.com/oqXXI0S.png"
+                        when 'messenger' then image_url ="https://i.imgur.com/IAumbDc.png"
                         
                         image_url
     end

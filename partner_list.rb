@@ -36,6 +36,7 @@ class PartnerList
         when 'scarecrow' then displayname = 'Scarecrow'
         when 'thana' then displayname = 'Thana the Vampire'
         when 'dragoness' then displayname = 'Weeping Dragoness'
+        when 'messenger' then displayname = 'Messenger of Destiny'
         
     end
     
@@ -88,6 +89,7 @@ def Red_Partners()
                         when 'ghost' then image_url = "https://i.imgur.com/QftSqWB.jpg"
                         when 'thana' then image_url = "https://i.imgur.com/Kle9kFm.png"
                         when 'dragoness' then image_url = "https://i.imgur.com/MoUgZRU.png"
+                        when 'messenger' then image_url ="https://i.imgur.com/oqXXI0S.png"
                         
                         image_url
     end
@@ -120,6 +122,7 @@ def Green_Partners()
                         when 'scarecrow' then image_url = "https://i.imgur.com/T3JbzRQ.jpg"
                         when 'thana' then image_url = "https://i.imgur.com/ukVP7db.png"
                         when 'dragoness' then image_url = "https://i.imgur.com/RX8SHWO.png"
+                        when 'messenger' then image_url ="https://i.imgur.com/IcRcNHH.png"
                         
                         image_url
     end
@@ -151,6 +154,7 @@ def Blue_Partners()
                         when 'medusa' then image_url = "https://i.imgur.com/TIhRCpx.jpg"
                         when 'thana' then image_url = "https://i.imgur.com/bF2EkGx.png"
                         when 'dragoness' then image_url = "https://i.imgur.com/zkNs1s1.png"
+                        when 'messenger' then image_url ="https://i.imgur.com/oTqdmDo.png"
                         
                         image_url
     end

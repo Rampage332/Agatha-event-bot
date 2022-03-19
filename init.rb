@@ -376,14 +376,6 @@ end
   if player1[1].nil?
     event.respond "Dear #{event.user.mention}, the correct command is @Agatha² rank __Your Game Name__, which was submitted in the form."
   end
-
-  session = GoogleDrive::Session.from_service_account_key("client_secret.json")
-  
-  spreadsheet = session.spreadsheet_by_title("349 Managerial Sheet")
-  
-  worksheet = spreadsheet.worksheets.sixth
-  
-  worksheet.rows.first(70).each { |row| puts row.first(7)}
   
   csv_table = CSV.table("349 Managerial Sheet - AgathaSheet.csv", converters: :all)
   

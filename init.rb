@@ -392,23 +392,23 @@ end
          
       end
       
-      if player_array[2] > 84
+      if player_array[1] < 11
           
           img_url = "https://i.imgur.com/cyQCCmK.png"
           
-      elsif player_array[2] <= 84 && player_array[2] >= 75
+      elsif pplayer_array[1] >= 11 && player_array[1] < 21
       
           img_url = "https://i.imgur.com/taqtJqO.png"
           
-      elsif player_array[2] <= 74 && player_array[2] >= 65
+      elsif pplayer_array[1] >= 21 && player_array[1] < 31
           
               img_url = "https://i.imgur.com/klUjqlO.png"
               
-      elsif player_array[2] <= 64 && player_array[2] >= 55
+      elsif pplayer_array[1] >= 31 && player_array[1] < 41
               
               img_url = "https://i.imgur.com/SuiZ5Vx.png"
               
-      elsif player_array[2] <= 54 && player_array[2] >= 45
+      elsif pplayer_array[1] >= 41 && player_array[1] < 51
                       
               img_url = "https://i.imgur.com/GtRul0z.png"
               
@@ -426,7 +426,7 @@ end
                     embed.description = "__                                                                           __"
                     embed.add_field(name: '**Server Rank** <:rank:947154489452920892> ', value: player_array[1], inline: true)
                     embed.add_field(name: "**Overall Score**", value: "#{player_array[2]}%", inline: true)
-                    embed.add_field(name: '**Viler Score** <:viler:947155044577448047>', value: "#{player_array[3]}%", inline: true)
+                    embed.add_field(name: '**Dragonkin Score** <:viler:947155044577448047>', value: "#{player_array[3]}%", inline: true)
                     embed.add_field(name: "**Runes Score** <:Runes:947154489121599519>", value: "#{player_array[4]}%", inline: true)
                     embed.add_field(name: '**Equipment Score** <:equipment:947154489276792862>', value: "#{player_array[5]}%", inline: true)
                     embed.add_field(name: "**Essentials Score**", value: "#{player_array[6]}%", inline: true)

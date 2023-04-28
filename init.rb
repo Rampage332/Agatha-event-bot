@@ -20,6 +20,18 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 )
 
 #==========================================================================================
+#General Chitchat function
+
+@agatha_bot.mention do |event|
+  # Check if the bot was mentioned without a specific command
+  if event.content.strip == "<@!740929277318398003>" || "<@740929277318398003>"
+    # Call chitchat function to generate a natural language response
+    response = chitchat(wit_client, event.content)
+
+    # Reply with the generated response
+    event.reply(response)
+  end
+end
 
 #Main menu (Help & Comlist) Functions
 

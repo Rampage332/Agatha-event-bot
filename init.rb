@@ -65,27 +65,6 @@ require 'bundler'
     > Use this command so that Agatha tells you how many times you need to attack an outpost to completely burn
     > Example: **@Agatha² burn 21000**
     
-    > **current_event [new/old]**
-    > Will tell you what is the current ongoing daily event.
-    > You can specify old or new based on how old your server is.
-
-    > **next [event] [new/old]**
-    > You can specify old or new based on how old your server is.
-
-    The events you can choose from are:
-      - **tiger**    [Smiledon Attack]
-      - **wolf**     [Wolves]
-      - **wish**     [Wish Tree]
-      - **troops**   [Fast Training
-      - **power**    [Power Up]
-      - **research** [Research]
-      - **build**    [Building]
-      - **rune**     [Whispering of Runes]
-      - **clean**    [Clean Up]
-      - **barb**     [Barbarian War]
-
-    Example: **next power new**
-    
     > **partner**
     
     > Agatha will fetch the partner guide from an availble list of partners.
@@ -147,27 +126,6 @@ end
     > Use this command so that Agatha tells you how many times you need to attack an outpost to completely burn
     > Example: **@Agatha² burn 21000**
     
-    > **current_event [new/old]**
-    > Will tell you what is the current ongoing daily event.
-    > You can specify old or new based on how old your server is.
-
-    > **next [event] [new/old]**
-    > You can specify old or new based on how old your server is.
-
-    The events you can choose from are:
-      - **tiger**    [Smiledon Attack]
-      - **wolf**     [Wolves]
-      - **wish**     [Wish Tree]
-      - **troops**   [Fast Training
-      - **power**    [Power Up]
-      - **research** [Research]
-      - **build**    [Building]
-      - **rune**     [Whispering of Runes]
-      - **clean**    [Clean Up]
-      - **barb**     [Barbarian War]
-
-    Example: **next power new**
-    
     > **partner**
     
     > Agatha will fetch the partner guide from an availble list of partners.
@@ -188,55 +146,55 @@ end
 
 #Brutal Age Events function
 
-@agatha_bot.command(:next) do |event|
-  params = event.message.content.split(' ')
-  return unless params.size > 1
-  
-  if params[0] == "<@!740929277318398003>" || params[0] == "<@740929277318398003>"
-      params[0] = params[1]
-      params[1] = params[2]
-      params[2] = params[3]
-  end
-
-  type = params[2].downcase rescue "old"
-
-  event_list = EventList.new type
-  details = event_list.next_event(params[1])
-
-  event.channel.send_embed do |embed|
-    embed.colour = 0xFF4000
-    embed.title = details[:name]
-    embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: details[:thumbnail])
-    embed.add_field(name: 'Time until', value: details[:starts_in], inline: false)
-    embed.add_field(name: "> Tips", value: details[:tips], inline: false)
-  end
-end
-
-@agatha_bot.command(:current_event) do |event|
-  type = event.message.content.split(' ')[1].downcase rescue "old"
-
-  event_list = EventList.new type
-  details = event_list.current_event
-  details_count = details.size
-
-  event.channel.send_embed do |embed|
-    embed.colour = 0xFF4000
-    embed.title = details[0][:name]
-    embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: details[0][:thumbnail])
-    embed.add_field(name: 'Time remaining', value: details[0][:ends_in], inline: false)
-    embed.add_field(name: "> Tips", value: details[0][:tips], inline: false)
-  end
-
-  if details_count > 1
-    event.channel.send_embed do |embed|
-      embed.colour = 0xFF8000
-      embed.title = details[1][:name]
-      embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: details[1][:thumbnail])
-      embed.add_field(name: 'Time remaining', value: details[1][:ends_in], inline: false)
-      embed.add_field(name: "> Tips", value: details[1][:tips], inline: false)
-    end
- end
-end
+# @agatha_bot.command(:next) do |event|
+#  params = event.message.content.split(' ')
+#  return unless params.size > 1
+#
+#  if params[0] == "<@!740929277318398003>" || params[0] == "<@740929277318398003>"
+#      params[0] = params[1]
+#      params[1] = params[2]
+#      params[2] = params[3]
+#  end
+#
+#  type = params[2].downcase rescue "old"
+#
+#  event_list = EventList.new type
+#  details = event_list.next_event(params[1])
+#
+# event.channel.send_embed do |embed|
+#    embed.colour = 0xFF4000
+#    embed.title = details[:name]
+#    embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: details[:thumbnail])
+#    embed.add_field(name: 'Time until', value: details[:starts_in], inline: false)
+#    embed.add_field(name: "> Tips", value: details[:tips], inline: false)
+#  end
+#end
+#
+#@agatha_bot.command(:current_event) do |event|
+#  type = event.message.content.split(' ')[1].downcase rescue "old"
+#
+#  event_list = EventList.new type
+#  details = event_list.current_event
+#  details_count = details.size
+#
+#  event.channel.send_embed do |embed|
+#    embed.colour = 0xFF4000
+#    embed.title = details[0][:name]
+#    embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: details[0][:thumbnail])
+#    embed.add_field(name: 'Time remaining', value: details[0][:ends_in], inline: false)
+#    embed.add_field(name: "> Tips", value: details[0][:tips], inline: false)
+#  end
+#
+#  if details_count > 1
+#    event.channel.send_embed do |embed|
+#      embed.colour = 0xFF8000
+#      embed.title = details[1][:name]
+#      embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: details[1][:thumbnail])
+#      embed.add_field(name: 'Time remaining', value: details[1][:ends_in], inline: false)
+#      embed.add_field(name: "> Tips", value: details[1][:tips], inline: false)
+#    end
+# end
+#end
 
 #==========================================================================================
 
@@ -254,7 +212,7 @@ end
         honor[4] = honor[5]
     end
     
-    honorlist = ['outpost','troop','shaman','beastmaster','warrior']
+    honorlist = ['outpost','troop','shaman','beastmaster','warrior','agf','ap','champion','wyverness','sorceress']
     
     if honor[1].nil?
         event.respond "Dear #{event.user.mention}, the correct command is @Agatha² honor __research name__ __level__."
@@ -290,6 +248,12 @@ end
                                 > Beastmaster Hp II
                                 > Beastmaster Def II
                                 > Troop Atk
+                                > AGF (Advance Ghost Force)
+                                > AP (Advance Pursuit)
+                                > Champion
+                                > Wyverness
+                                > Sorceress
+                                
                                 Example: @Agatha²  honor Shaman def II 5
                                 "
                 end
@@ -304,6 +268,8 @@ end
             check2 = ['warrior','shaman','beastmaster']
             check3 = ['i','ii']
             check4 = ['1','2','3','4','5','6','7','8','9','10']
+            check5 = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15']
+            check6 = ['champion','wyverness','sorceress']
             
             entrycheck = false
             
@@ -311,13 +277,26 @@ end
                 entrycheck = true
             
             elsif honor[1].downcase == 'troop'
-                
                 if check1.include? honor[2].downcase
                     if check4.include? honor[3]
                         entrycheck = true
                     end
                 end
-                
+            
+            elsif honor[1].downcase == 'agf'
+                if check5.include? honor[2].downcase
+                        entrycheck = true
+                end
+            
+            
+            elsif honor[1].downcase == 'ap'
+                if check4.include? honor[2].downcase
+                        entrycheck = true
+                end
+        
+            elsif check6.include? honor[1].downcase
+                        entrycheck = true
+
             elsif check2.include? honor[1].downcase
                 if check1.include? honor[2].downcase
                     if check3.include? honor[3].downcase
@@ -392,23 +371,27 @@ end
          
       end
       
-      if player_array[1] < 11
+      if player_array[1] < 6
+          
+          img_url = "https://i.imgur.com/n68zjIp.png"
+          
+      elsif player_array[1] >= 6 && player_array[1] < 11
           
           img_url = "https://i.imgur.com/cyQCCmK.png"
-          
-      elsif pplayer_array[1] >= 11 && player_array[1] < 21
+    
+      elsif player_array[1] >= 11 && player_array[1] < 21
       
           img_url = "https://i.imgur.com/taqtJqO.png"
           
-      elsif pplayer_array[1] >= 21 && player_array[1] < 31
+      elsif player_array[1] >= 21 && player_array[1] < 31
           
               img_url = "https://i.imgur.com/klUjqlO.png"
               
-      elsif pplayer_array[1] >= 31 && player_array[1] < 41
+      elsif player_array[1] >= 31 && player_array[1] < 41
               
               img_url = "https://i.imgur.com/SuiZ5Vx.png"
               
-      elsif pplayer_array[1] >= 41 && player_array[1] < 51
+      elsif player_array[1] >= 41 && player_array[1] < 51
                       
               img_url = "https://i.imgur.com/GtRul0z.png"
               
@@ -429,7 +412,11 @@ end
                     embed.add_field(name: '**Dragonkin Score** <:viler:947155044577448047>', value: "#{player_array[3]}%", inline: true)
                     embed.add_field(name: "**Runes Score** <:Runes:947154489121599519>", value: "#{player_array[4]}%", inline: true)
                     embed.add_field(name: '**Equipment Score** <:equipment:947154489276792862>', value: "#{player_array[5]}%", inline: true)
-                    embed.add_field(name: "**Essentials Score**", value: "#{player_array[6]}%", inline: true)
+                    embed.add_field(name: '**Flamen Score** <:flamen:1001509427150594150>', value: "#{player_array[6]}%", inline: true)
+                    embed.add_field(name: '**Artifact Score** <:artifact:1001509357625806859>', value: "#{player_array[7]}%", inline: true)
+                    embed.add_field(name: "**Essentials Score**", value: "#{player_array[8]}%", inline: true)
+                    embed.add_field(name: "\u200b", value: "\u200b", inline: true)
+                    
                     embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'Done by RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
       
           
@@ -449,7 +436,7 @@ end
       partner1[2] = partner1[3]
   end
   
-  partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduchess','prince','ursa','bape','judge','chacha','woody','tusk','executor','mr.dagger','nomad','warmaiden','panda','tricky','medusa','marksman','ghost','scarecrow','thana','dragoness','messenger']
+  partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduchess','prince','ursa','bape','judge','chacha','woody','tusk','executor','mr.dagger','nomad','warmaiden','panda','tricky','medusa','marksman','ghost','scarecrow','thana','dragoness','messenger','golk']
   
   if partner1[1].nil?
       event.respond "Dear #{event.user.mention}, the correct command is @Agatha² partner __color__ __partner name__."
@@ -489,6 +476,7 @@ end
                 > 24- Thana
                 > 25- Dragoness
                 > 26- Messenger
+                > 27- Golk
 
                 Example: @Agatha² partner Blue Rockwell
                 "

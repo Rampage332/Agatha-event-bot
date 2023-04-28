@@ -37,6 +37,7 @@ class PartnerList
         when 'thana' then displayname = 'Thana the Vampire'
         when 'dragoness' then displayname = 'Weeping Dragoness'
         when 'messenger' then displayname = 'Messenger of Destiny'
+        when 'golk' then displayname = 'Titan Golk'
         
     end
     
@@ -90,6 +91,7 @@ def Red_Partners()
                         when 'thana' then image_url = "https://i.imgur.com/Kle9kFm.png"
                         when 'dragoness' then image_url = "https://i.imgur.com/MoUgZRU.png"
                         when 'messenger' then image_url ="https://i.imgur.com/IAumbDc.png"
+                        when 'golk' then image_url ="https://i.imgur.com/fE6PGRA.png"
                         
                         image_url
     end
@@ -123,6 +125,7 @@ def Green_Partners()
                         when 'thana' then image_url = "https://i.imgur.com/ukVP7db.png"
                         when 'dragoness' then image_url = "https://i.imgur.com/RX8SHWO.png"
                         when 'messenger' then image_url ="https://i.imgur.com/IcRcNHH.png"
+                        when 'golk' then image_url ="https://i.imgur.com/faXVYQo.png"
                         
                         image_url
     end
@@ -155,6 +158,7 @@ def Blue_Partners()
                         when 'thana' then image_url = "https://i.imgur.com/bF2EkGx.png"
                         when 'dragoness' then image_url = "https://i.imgur.com/zkNs1s1.png"
                         when 'messenger' then image_url ="https://i.imgur.com/oTqdmDo.png"
+                        when 'golk' then image_url ="https://i.imgur.com/dziSyJ1.png"
                         
                         image_url
     end

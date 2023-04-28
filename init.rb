@@ -6,6 +6,9 @@ require 'dotenv/load'
 require 'pry'
 require 'csv'
 require 'bundler'
+require 'wit'
+
+WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 
 @agatha_bot = Discordrb::Commands::CommandBot.new(
   token: ENV["TOKEN"],

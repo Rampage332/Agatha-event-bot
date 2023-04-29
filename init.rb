@@ -26,7 +26,7 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
   # Check if the bot was mentioned without a specific command
   if event.content.strip == "<@!740929277318398003>" || event.content.strip == "<@740929277318398003>"
     # Call chitchat function to generate a natural language response
-    response = chitchat(wit_client, event.content)
+    response = chitchat(WIT_CLIENT, event.content)
 
     # Reply with the generated response
     event.reply(response)

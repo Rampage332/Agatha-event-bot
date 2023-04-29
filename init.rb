@@ -22,9 +22,9 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 #==========================================================================================
 #General Chitchat function
 
-def chitchat(WIT_CLIENT, message)
+def chitchat(wit_client, message)
   # Send user message to Wit.ai and receive response
-  response = WIT_CLIENT.message(message)
+  response = wit_client.message(message)
 
   # Extract the text message from Wit.ai response
   text = response["intents"].first["text"]

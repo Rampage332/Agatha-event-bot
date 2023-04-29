@@ -25,7 +25,8 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 def chitchat(wit_client, message)
   # Call Wit.ai message API to get a response based on the user's input
   response = wit_client.message(message)
-
+  puts response.inspect
+  
   # Check if the response includes a 'text' field and if it's not empty
   if response.key?("text") && !response["text"].empty?
     # Return the response text from the Wit.ai response

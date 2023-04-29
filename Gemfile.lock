@@ -138,6 +138,7 @@ GEM
     websocket-client-simple (0.5.1)
       event_emitter
       websocket
+    wit (7.0.1)
 
 PLATFORMS
   ruby
@@ -150,6 +151,7 @@ DEPENDENCIES
   google-apis-sheets_v4
   google_drive
   pry
+  wit
 
 RUBY VERSION
    ruby 2.7.5

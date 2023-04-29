@@ -10,6 +10,8 @@ require 'wit'
 
 WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 
+small_talk_model = WIT_CLIENT.get_model('small-talk')
+
 @agatha_bot = Discordrb::Commands::CommandBot.new(
   token: ENV["TOKEN"],
   client_id: ENV["C_ID"],
@@ -27,7 +29,7 @@ def chitchat(wit_client, message, bot_id)
   message = message.gsub("<@#{ENV['BOT_ID']}>", "").strip
 
   # Call Wit.ai message API to get a response based on the user's input
-  response = small_talk(wit_client, "How are you?")
+  response = wit_client.message(message, model: 'small-talk')
 
   # Check if the response includes a 'text' field and if it's not empty
   if response.key?("text") && !response["text"].empty?

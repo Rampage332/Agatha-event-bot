@@ -22,34 +22,41 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 #==========================================================================================
 #General Chitchat function
 
-def chitchat(wit_client, message, bot_id)
+# def chitchat(wit_client, message, bot_id)
   # Remove the bot's ID from the message..
-  message = message.gsub("<@#{ENV['BOT_ID']}>", "").strip
+#  message = message.gsub("<@#{ENV['BOT_ID']}>", "").strip
 
   # Call Wit.ai message API to get a response based on the user's input
-  response = wit_client.message(message)
+#  response = wit_client.message(message)
 
   # Check if the response includes a 'text' field and if it's not empty
-  if response.key?("text") && !response["text"].empty?
+#  if response.key?("text") && !response["text"].empty?
     # Return the response text from the Wit.ai response
-    return response["text"]
-  end
+ #   return response["text"]
+ # end
 
   # Return a default response if the Wit.ai response does not contain any text
-  return "I'm sorry, I didn't quite understand. Can you please try again?"
-end
+  #return "I'm sorry, I didn't quite understand. Can you please try again?"
+#end
 
-@agatha_bot.mention do |event|
+#@agatha_bot.mention do |event|
   # Check if the bot was mentioned without a specific command
-  if event.message.mentions.include?(@agatha_bot.profile)
+ # if event.message.mentions.include?(@agatha_bot.profile)
     # Call chitchat function to generate a natural language response
-    response = chitchat(WIT_CLIENT, event.content, @agatha_bot.profile.id)
+  #  response = chitchat(WIT_CLIENT, event.content, @agatha_bot.profile.id)
 
     # Reply with the generated response
-    event.message.reply(response)
-  end
-end
+   # event.message.reply(response)
+  #end
+#end
 
+#========================================================================================
+
+# CSV Based Dialog
+
+
+
+#========================================================================================
 
 #Main menu (Help & Comlist) Functions
 

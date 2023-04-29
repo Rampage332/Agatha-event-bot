@@ -26,18 +26,15 @@ def chitchat(wit_client, message)
   # Call Wit.ai message API to get a response based on the user's input
   response = wit_client.message(message)
   
-  # Check if the response includes an 'intents' array and if the first element is not nil
-  if response.key?("intents") && response["intents"].first
-    # Extract the intent and confidence from the Wit.ai response
-    intent = response["intents"].first["name"]
-    confidence = response["intents"].first["confidence"]
-    
-    # Check if the intent is a chitchat intent and if the confidence is high enough
-    if intent.start_with?("wit$") && confidence > 0.5
-      # Return the chitchat response from the Wit.ai response
-      return response["intents"].first["value"]
-    end
+  # Check if the response includes a 'text' field and if it's not empty
+  if response.key?("text") && !response["text"].empty?
+    # Return the response text from the Wit.ai response
+    return response["text"]
   end
+  
+  # Return a default response if the Wit.ai response does not contain any text
+  return "I'm sorry, I didn't quite understand. Can you please try again?"
+end
   
   # Return a default response if the Wit.ai response does not contain a chitchat intent
   return "I'm sorry, I didn't quite understand. Can you please try again?"

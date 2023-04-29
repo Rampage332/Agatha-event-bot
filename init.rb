@@ -27,7 +27,7 @@ def chitchat(wit_client, message, bot_id)
   message = message.gsub("<@#{ENV['BOT_ID']}>", "").strip
 
   # Call Wit.ai message API to get a response based on the user's input
-  response = wit_client.message(message)
+  response = small_talk(wit_client, "How are you?")
 
   # Check if the response includes a 'text' field and if it's not empty
   if response.key?("text") && !response["text"].empty?

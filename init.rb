@@ -23,7 +23,7 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 #General Chitchat function
 
 def chitchat(wit_client, message, bot_id)
-  # Remove the bot's ID from the message
+  # Remove the bot's ID from the message..
   message = message.gsub("<@#{ENV[BOT_ID]}>", "").strip
 
   # Call Wit.ai message API to get a response based on the user's input

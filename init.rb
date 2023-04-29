@@ -8,7 +8,7 @@ require 'csv'
 require 'bundler'
 # require 'wit'
 
-dialogs = CSV.read('dialogs.csv', headers: false)
+dialogs = CSV.read('dialogs.csv', headers: true)
 
 # WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 

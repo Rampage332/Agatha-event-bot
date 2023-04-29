@@ -23,14 +23,21 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 #General Chitchat function
 
 def chitchat(wit_client, message)
-  # Send user message to Wit.ai and receive response
+  # Call Wit.ai message API to get a response based on the user's input
   response = wit_client.message(message)
-
-  # Extract the text message from Wit.ai response
-  text = response["intents"].first["text"]
-
-  # Return the text message
-  return text
+  
+  # Extract the intent and confidence from the Wit.ai response
+  intent = response["intents"].first["name"]
+  confidence = response["intents"].first["confidence"]
+  
+  # Check if the intent is a chitchat intent and if the confidence is high enough
+  if intent.start_with?("wit$") && confidence > 0.5
+    # Return the chitchat response from the Wit.ai response
+    return response["intents"].first["value"]
+  else
+    # Return a default response if the Wit.ai response does not contain a chitchat intent
+    return "I'm sorry, I didn't quite understand. Can you please try again?"
+  end
 end
 
 @agatha_bot.mention do |event|

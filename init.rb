@@ -8,7 +8,7 @@ require 'csv'
 require 'bundler'
 require 'wit'
 
-WIT_CLIENT = wit.new(access_token: ENV['WIT_TOKEN'])
+WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 
 small_talk_model = WIT_CLIENT.get_model('small-talk')
 

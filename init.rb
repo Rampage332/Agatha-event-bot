@@ -50,7 +50,7 @@ end
     response = chitchat(WIT_CLIENT, event.content)
 
     # Reply with the generated response
-    event.reply(response)
+    event.message.reply(response)
   end
 end
 

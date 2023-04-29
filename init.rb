@@ -6,9 +6,11 @@ require 'dotenv/load'
 require 'pry'
 require 'csv'
 require 'bundler'
-require 'wit'
+# require 'wit'
 
-WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
+dialogs = CSV.read('dialogs.csv', headers: false)
+
+# WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 
 @agatha_bot = Discordrb::Commands::CommandBot.new(
   token: ENV["TOKEN"],
@@ -54,7 +56,31 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 
 # CSV Based Dialog
 
+# Define the chitchat function
+def chitchat(message, dialogs)
+  # Remove commas, periods, apostrophes, and question marks from the message
+  message = message.gsub(/[,.?']/, '').downcase.strip
+  
+  # Search for a matching message in the CSV file
+  response = dialogs.find { |row| row['message'].gsub(/[,.?']/, '').downcase.strip == message }
+  
+  # If a response is found, return it
+  if response
+    return response['response']
+  end
+  
+  # If no response is found, return a default message
+  return "I'm sorry, I didn't quite understand. Can you please rephrase that?"
+end
 
+# Check if the bot is mentioned and no command is presented
+if message.include?('Agatha') && !message.include?('/')
+  # Call the chitchat function to generate a response
+  response = chitchat(message, dialogs)
+  
+  # Send the response back to the user
+  send_message(recipient_id, response)
+end
 
 #========================================================================================
 

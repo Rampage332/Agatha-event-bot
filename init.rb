@@ -295,7 +295,7 @@ end
     honorlist = ['outpost','troop','shaman','beastmaster','warrior','agf','ap','champion','wyverness','sorceress']
     
     if honor[1].nil?
-        event.respond "Dear #{event.user.mention}, the correct command is @Agatha² honor __research name__ __level__."
+        event.respond "Dear #{event.user.mention}, the correct command is @Agatha² honor __research name__ __tier__ __level__."
     
     elsif honor[2].nil? && honor[1].downcase != 'outpost'
         if honor[1].downcase == 'help'
@@ -337,7 +337,7 @@ end
                                 Example: @Agatha²  honor Shaman def II 5
                                 "
                 end
-            else event.respond "Dear #{event.user.mention}, the correct command is @Agatha² honor __research name__ __level__. \n > Use: @Agatha² honor help"
+            else event.respond "Dear #{event.user.mention}, the correct command is @Agatha² honor __research name__ __tier__ __level__. \n > Use: @Agatha² honor help"
             end
         
         elsif honorlist.include? honor[1].downcase
@@ -405,12 +405,12 @@ end
                 end
             
             elsif entrycheck == false
-                event.respond "Dear #{event.user.mention}, the correct command is @Agatha² honor __research name__ __level__. \n > Use: @Agatha² honor help"
+                event.respond "Dear #{event.user.mention}, the correct command is @Agatha² honor __research name__ __tier__ __level__. \n > Use: @Agatha² honor help"
             
             end
             
             else
-                event.respond "Dear #{event.user.mention}, the correct command is @Agatha² honor __research name__ __level__. \n > Use: @Agatha² honor help"
+                event.respond "Dear #{event.user.mention}, the correct command is @Agatha² honor __research name__ __tier__ __level__. \n > Use: @Agatha² honor help"
         end
 
 end

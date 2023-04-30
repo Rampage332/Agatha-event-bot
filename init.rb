@@ -56,24 +56,18 @@ list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','�
 
 # CSV Based Dialog
 
-def load_dialogs(filename)
-  dialogs = {}
-
-  CSV.foreach(filename) do |row|
-    message = row[0].strip.downcase
-    response = row[1].strip
-    dialogs[message] = response
-  end
-
-  return dialogs
-end
-
-def chitchat(message, dialogs)
+def chitchat(user_message)
   # Remove commas, periods, apostrophes, and question marks from the message
-  message = message.gsub(/[,.?']/, '').downcase.strip
-
+  user_message = user_message.gsub(/[,.?']/, '').downcase.strip
+  
+  
+  dialogs = CSV.table("dialogs.csv", converters: :all)
+    dialogs_array = dialogs.find  do |row|
+    row.field(:message) == user_message
+    end
+  
   # Search for a matching message in the hash
-  response = dialogs[message]
+  response = dialogs_array[1]
 
   # If a response is found, return it
   if response
@@ -83,8 +77,6 @@ def chitchat(message, dialogs)
   # If no response is found, return a default message
   return "I'm sorry, I didn't quite understand."
 end
-
-dialogs = load_dialogs('dialogs.csv')
 
 @agatha_bot.mention do |event|
   is_command = true
@@ -97,7 +89,7 @@ dialogs = load_dialogs('dialogs.csv')
   # Check if the bot is mentioned and no command is presented
   if event.message.mentions.include?(@agatha_bot.profile) && is_command
     # Call the chitchat function to generate a response
-    response = chitchat(event.message.content, dialogs)
+    response = chitchat(event.message.content)
     # Send the response back to the user
     event.message.reply(response)
   end

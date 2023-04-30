@@ -56,7 +56,7 @@ list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','�
 
 # CSV Based Dialog
 
-def chitchat(message)
+def chitchat(user_message)
   # Remove commas, periods, apostrophes, and question marks from the message
   user_message = user_message.gsub(/[,.?']/, '').downcase.strip
   

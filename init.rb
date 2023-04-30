@@ -83,7 +83,7 @@ def chitchat(user_message)
   response = WIT_CLIENT.message(user_message)
     if response.nil?
       arraycheck = 0
-      
+      puts user_message
     else  
       return response
     end

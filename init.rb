@@ -70,7 +70,11 @@ def chitchat(user_message)
   
   if dialogs_array.nil?
     # Send to Wit.ai for intent
-    response = WIT_CLIENT.message(user_message)
+    begin
+       response = WIT_CLIENT.message(user_message)
+   rescue RestClient::BadRequest => e
+       puts "Wit.ai error: #{e.response}"
+    end
     
     if response.nil?
       # If no response is found, return a default message

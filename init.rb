@@ -59,10 +59,10 @@ list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','�
 # Define the chitchat function
 # Load the dialogs from the text file
 
-def load_dialogs(dialogs.csv)
+def load_dialogs(dialogs_csv)
   dialogs = {}
 
-  CSV.foreach(dialogs.csv) do |row|
+  CSV.foreach(dialogs_csv) do |row|
     message = row[0].strip.downcase
     response = row[1].strip
     dialogs[message] = response

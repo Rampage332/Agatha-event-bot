@@ -70,10 +70,9 @@ def chitchat(user_message)
   
   if dialogs_array.nil?
     # Send to Wit.ai for intent
-    begin
-       response = WIT_CLIENT.message(user_message)
-   rescue RestClient::BadRequest => e
-       puts "Wit.ai error: #{e.response}"
+         response = "The message being passed to Wit.ai is: " + user_message
+       # response = WIT_CLIENT.message(user_message)
+   
     end
     
     if response.nil?

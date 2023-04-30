@@ -10,7 +10,7 @@ require 'wit'
 
 list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','🖐','send_nudes','shush','shut','cigarette','coffee','coin','digging','burn','rank','fusion','runes','relics','catfish','dolmen','moral','temple_titles','hall_of_war','totems','kill']
 
-WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
+WIT_CLIENT = Wit.new(access_token: "ZYD53KXAQK6IMGPVC2WEPF4U4E3EG5AF")
 
 @agatha_bot = Discordrb::Commands::CommandBot.new(
   token: ENV["TOKEN"],
@@ -70,8 +70,8 @@ def chitchat(user_message)
   
   if dialogs_array.nil?
     # Send to Wit.ai for intent
-         response = "The message being passed to Wit.ai is: " + user_message
-       # response = WIT_CLIENT.message(user_message)
+       #  response = "The message being passed to Wit.ai is: " + user_message
+       response = WIT_CLIENT.message(user_message)
     
     if response.nil?
       # If no response is found, return a default message

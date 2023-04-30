@@ -60,18 +60,18 @@ list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','�
 
 # Define the chitchat function
 # Load the dialogs from the text file
-dialogs = File.readlines('dialogs.txt').map { |line| line.chomp.split("\t") }.to_h
+dialogs = File.readlines('dialogs.txt', chomp: true).map { |line| line.split("\t") }.to_h
 
 def chitchat(message, dialogs)
   # Remove commas, periods, apostrophes, and question marks from the message
   message = message.gsub(/[,.?']/, '').downcase.strip
 
-  # Search for a matching message in the text file
-  response = dialogs.detect { |line| line.split("\t")[0].gsub(/[,.?']/, '').downcase.strip == message }
+  # Search for a matching message in the hash
+  response = dialogs.detect { |key, value| key.gsub(/[,.?']/, '').downcase.strip == message }&.last
 
   # If a response is found, return it
   if response
-    return response.split("\t")[1]
+    return response
   end
 
   # If no response is found, return a default message
@@ -94,8 +94,6 @@ end
     event.message.reply(response)
   end
 end
-
-
 
 #========================================================================================
 

@@ -59,7 +59,7 @@ list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','�
 def chitchat(user_message)
   # Remove commas, periods, apostrophes, and question marks from the message
   user_message = user_message.gsub(/[,.?']/, '').downcase.strip
-  
+  dialogs_array =[' ',' ']
   
   dialogs = CSV.table("dialogs.csv", converters: :all)
     dialogs_array = dialogs.find  do |row|

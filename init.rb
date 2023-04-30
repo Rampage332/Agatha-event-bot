@@ -56,18 +56,24 @@ list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','�
 
 # CSV Based Dialog
 
-def chitchat(user_message)
+def load_dialogs(filename)
+  dialogs = {}
+
+  CSV.foreach(filename) do |row|
+    message = row[0].strip.downcase
+    response = row[1].strip
+    dialogs[message] = response
+  end
+
+  return dialogs
+end
+
+def chitchat(message, dialogs)
   # Remove commas, periods, apostrophes, and question marks from the message
-  user_message = user_message.gsub(/[,.?']/, '').downcase.strip
-  
-  
-  dialogs = CSV.table("dialogs.csv", converters: :all)
-    dialogs_array = dialogs.find  do |row|
-    row.field(:message) == user_message
-    end
-  
+  message = message.gsub(/[,.?']/, '').downcase.strip
+
   # Search for a matching message in the hash
-  response = dialogs_array[2]
+  response = dialogs[message]
 
   # If a response is found, return it
   if response
@@ -78,6 +84,7 @@ def chitchat(user_message)
   return "I'm sorry, I didn't quite understand."
 end
 
+dialogs = load_dialogs('dialogs.csv')
 
 @agatha_bot.mention do |event|
   is_command = true

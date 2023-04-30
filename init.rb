@@ -8,9 +8,9 @@ require 'csv'
 require 'bundler'
 # require 'wit'
 
-list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','🖐','who','I','i','send_nudes','shush','shut','cigarette','coffee','coin','digging','burn','rank','fusion','runes','relics','catfish','dolmen','moral','temple_titles','hall_of_war','totems','thanks','thank','kill']
+list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','🖐','send_nudes','shush','shut','cigarette','coffee','coin','digging','burn','rank','fusion','runes','relics','catfish','dolmen','moral','temple_titles','hall_of_war','totems','kill']
 
-# WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
+WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 
 @agatha_bot = Discordrb::Commands::CommandBot.new(
   token: ENV["TOKEN"],
@@ -22,24 +22,25 @@ list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','�
 )
 
 #==========================================================================================
-#General Chitchat function
+# General Chitchat function
 
 # def chitchat(wit_client, message, bot_id)
-  # Remove the bot's ID from the message..
-#  message = message.gsub("<@#{ENV['BOT_ID']}>", "").strip
+#  Remove the bot's ID from the message..
+#   message = message.gsub("<@#{ENV['BOT_ID']}>", "").strip
 
-  # Call Wit.ai message API to get a response based on the user's input
-#  response = wit_client.message(message)
+# Call Wit.ai message API to get a response based on the user's input
+#   response = wit_client.message(message)
 
-  # Check if the response includes a 'text' field and if it's not empty
-#  if response.key?("text") && !response["text"].empty?
-    # Return the response text from the Wit.ai response
- #   return response["text"]
- # end
+# Check if the response includes a 'text' field and if it's not empty
+#   if response.key?("text") && !response["text"].empty?
+# Return the response text from the Wit.ai response
+#     return response["text"]
+#   end
 
-  # Return a default response if the Wit.ai response does not contain any text
-  #return "I'm sorry, I didn't quite understand. Can you please try again?"
-#end
+# Return a default response if the Wit.ai response does not contain any text
+#   return "I'm sorry, I didn't quite get that."
+  
+# end
 
 #@agatha_bot.mention do |event|
   # Check if the bot was mentioned without a specific command
@@ -58,12 +59,12 @@ list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','�
 
 def chitchat(user_message)
   # Remove commas, periods, apostrophes, and question marks from the message
-  user_message = user_message.gsub(/[,.?']/, '').downcase.strip
+  user_message_stripped = user_message.gsub(/[,.?']/, '').downcase.strip
   dialogs_array =[' ',' ']
   
   dialogs = CSV.table("dialogs.csv", converters: :all)
     dialogs_array = dialogs.find  do |row|
-    row.field(:message) == user_message
+    row.field(:message) == user_message_stripped
     end
   
   # Search for a matching message in the hash
@@ -71,11 +72,21 @@ def chitchat(user_message)
 
   # If a response is found, return it
   if response
+    
     return response
+    
   end
-
+  
+  elsif
+  # Wit.ai function
+  response = wit_client.message(user_message)
+  return response
+  end
+  
+  else
   # If no response is found, return a default message
   return "I'm sorry, I didn't quite understand."
+  end
 end
 
 @agatha_bot.mention do |event|
@@ -790,28 +801,8 @@ end
 
 #Fun commands functions
 
-@agatha_bot.command(:who) do |event|
-    params = event.message.content.split(' ')
-    if params[0] == "<@!740929277318398003>" || params[0] == "<@740929277318398003>"
-        params[0] = params[1]
-        params[1] = params[2]
-        params[2] = params[3]
-    end
-   if params[1] == "made"
-       event.respond "@Rampage is my daddy"
-       end
-end
-
 @agatha_bot.command(:send_nudes) do |event|
   event.respond "Rampage!!, #{event.user.mention} is being naughty with me. HELP!"
-end
-
-@agatha_bot.command(:thanks) do |event|
-  event.respond "You're welcome!, #{event.user.mention}"
-end
-
-@agatha_bot.command(:thank) do |event|
-  event.respond "You're welcome!, #{event.user.mention}"
 end
 
 @agatha_bot.command(:kill) do |event|
@@ -828,48 +819,6 @@ end
       event.respond "Okay!!, #{event.user.mention} Hold my beer. 🍺"
       end
 end
-
-@agatha_bot.command(:I) do |event|
-  params = event.message.content.split(' ')
-  if params[0] == "<@!740929277318398003>" || params[0] == "<@740929277318398003>"
-      params[0] = params[1]
-      params[1] = params[2]
-      params[2] = params[3]
-      params[3] = params[4]
-  end
-  
-  if params[1].downcase == "love"
-      if params[2].downcase == "you" || params[2].downcase == "u"
-          event.respond "Oh #{event.user.mention}, I'm flattered. However, please select one of the following rejections ..\n - It's not you it's me .. \n - I need to focus on me .. \n - It's complicated .."
-      end
-      
-     elsif params[1].downcase == "hate"
-        if params[2].downcase == "you" || params[2].downcase == "u"
-            event.respond "Whyyy 😭, I feel so alone! \n \n \n J.K 🙄💅"
-        end
-     end
-end
-
-@agatha_bot.command(:i) do |event|
-    params = event.message.content.split(' ')
-    if params[0] == "<@!740929277318398003>" || params[0] == "<@740929277318398003>"
-        params[0] = params[1]
-        params[1] = params[2]
-        params[2] = params[3]
-        params[3] = params[4]
-    end
-    
-    if params[1].downcase == "love"
-        if params[2].downcase == "you" || params[2].downcase == "u"
-            event.respond "Oh #{event.user.mention}, I'm flattered. However, please select one of the following rejections ..\n - It's not you it's me .. \n - I need to focus on me .. \n - It's complicated .."
-        end
-        
-       elsif params[1].downcase == "hate"
-        if params[2].downcase == "you" || params[2].downcase == "u"
-            event.respond "Whyyy 😭, I feel so alone! \n \n \n J.K 🙄💅"
-        end
-       end
-  end
 
 @agatha_bot.command(:coffee) do |event|
     params = event.message.content.split(' ')

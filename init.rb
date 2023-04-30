@@ -64,7 +64,8 @@ def chitchat(message)
   dialogs = CSV.table("dialogs.csv", converters: :all)
     dialogs_array = dialogs.find  do |row|
     row.field(:message) == user_message
-
+    end
+  
   # Search for a matching message in the hash
   response = dialogs_array[2]
 

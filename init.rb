@@ -72,8 +72,6 @@ def chitchat(user_message)
     # Send to Wit.ai for intent
          response = "The message being passed to Wit.ai is: " + user_message
        # response = WIT_CLIENT.message(user_message)
-   
-    end
     
     if response.nil?
       # If no response is found, return a default message

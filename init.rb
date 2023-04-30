@@ -72,15 +72,21 @@ def chitchat(message, dialogs)
   end
   
   # If no response is found, return a default message
-  return "I'm sorry, I didn't quite understand. Can you please rephrase that?"
+  return "I'm sorry, I didn't quite understand."
 end
 
 @agatha_bot.mention do |event|
+  
+  is_command = true
+  
+  command_check = event.message.content.split(' ')
+  if list_of_commands.include? command_check[1].downcase
+    is_command = false
+  
   # Check if the bot is mentioned and no command is presented
-  if event.message.mentions.include?(@agatha_bot.profile) && !list_of_commands.any? { |command| event.message.content.downcase.start_with?("#{command} ") }
+  if event.message.mentions.include?(@agatha_bot.profile) && is_command
     # Call the chitchat function to generate a response
     response = chitchat(event.message.content, dialogs)
-    
     # Send the response back to the user
     event.message.reply(response)
   end

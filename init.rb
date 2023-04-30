@@ -73,6 +73,7 @@ def chitchat(user_message)
        #  response = "The message being passed to Wit.ai is: " + user_message
        # response = WIT_CLIENT.message(user_message)
        puts WIT_CLIENT.message(user_message)
+       response = ""
     
     if response.nil?
       # If no response is found, return a default message

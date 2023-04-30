@@ -73,13 +73,14 @@ def chitchat(message, dialogs)
   return "I'm sorry, I didn't quite understand. Can you please rephrase that?"
 end
 
+@agatha_bot.mention do |event|
 # Check if the bot is mentioned and no command is presented
-if message.include?('Agatha') && !message.include?('/')
+if event.message.mentions.include?(@agatha_bot.profile)
   # Call the chitchat function to generate a response
   response = chitchat(message, dialogs)
   
   # Send the response back to the user
-  send_message(recipient_id, response)
+  event.message.reply(response)
 end
 
 #========================================================================================

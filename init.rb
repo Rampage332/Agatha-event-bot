@@ -65,36 +65,36 @@ dialogs = File.readlines('dialogs.txt').map { |line| line.chomp.split("\t") }.to
 def chitchat(message, dialogs)
   # Remove commas, periods, apostrophes, and question marks from the message
   message = message.gsub(/[,.?']/, '').downcase.strip
-  
-  # Search for a matching message in the dialogs hash
-  response = dialogs[message]
-  
+
+  # Search for a matching message in the text file
+  response = dialogs.detect { |line| line.split("\t")[0].gsub(/[,.?']/, '').downcase.strip == message }
+
   # If a response is found, return it
   if response
-    return response
+    return response.split("\t")[1]
   end
-  
+
   # If no response is found, return a default message
   return "I'm sorry, I didn't quite understand."
 end
 
 @agatha_bot.mention do |event|
-  
   is_command = true
-  
+
   command_check = event.message.content.split(' ')
   if list_of_commands.include? command_check[1].downcase
     is_command = false
   end
-  
+
   # Check if the bot is mentioned and no command is presented
   if event.message.mentions.include?(@agatha_bot.profile) && is_command
     # Call the chitchat function to generate a response
-    response = chitchat(event.message.content.downcase.strip, dialogs)
+    response = chitchat(event.message.content, dialogs)
     # Send the response back to the user
     event.message.reply(response)
   end
 end
+
 
 
 #========================================================================================

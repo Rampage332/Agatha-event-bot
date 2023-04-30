@@ -59,25 +59,21 @@ list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','�
 # CSV Based Dialog
 
 # Define the chitchat function
+# Load the dialogs from the text file
+dialogs = File.readlines('dialogs.txt').map { |line| line.chomp.split("\t") }.to_h
+
 def chitchat(message, dialogs)
   # Remove commas, periods, apostrophes, and question marks from the message
   message = message.gsub(/[,.?']/, '').downcase.strip
-
-  # Search for a matching message in the TXT file
-  response = nil
-  File.foreach(dialogs) do |line|
-    msg, resp = line.chomp.split("\t")
-    if msg.gsub(/[,.?']/, '').downcase.strip == message
-      response = resp
-      break
-    end
-  end
-
+  
+  # Search for a matching message in the dialogs hash
+  response = dialogs[message]
+  
   # If a response is found, return it
   if response
     return response
   end
-
+  
   # If no response is found, return a default message
   return "I'm sorry, I didn't quite understand."
 end
@@ -94,11 +90,12 @@ end
   # Check if the bot is mentioned and no command is presented
   if event.message.mentions.include?(@agatha_bot.profile) && is_command
     # Call the chitchat function to generate a response
-    response = chitchat(event.message.content, 'dialogs.txt')
+    response = chitchat(event.message.content.downcase.strip, dialogs)
     # Send the response back to the user
     event.message.reply(response)
   end
 end
+
 
 #========================================================================================
 

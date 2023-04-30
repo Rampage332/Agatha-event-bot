@@ -67,11 +67,11 @@ def chitchat(message, dialogs)
   message = message.gsub(/[,.?']/, '').downcase.strip
 
   # Search for a matching message in the hash
-  response = dialogs.detect { |key, value| key.gsub(/[,.?']/, '').downcase.strip == message }&.last
+    response = dialogs.detect { |line| line.split("\t")[0].downcase.strip == message }
 
   # If a response is found, return it
   if response
-    return response
+    return response.split("\t")[1]
   end
 
   # If no response is found, return a default message

@@ -60,7 +60,7 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 def chitchat(user_message)
   # Remove commas, periods, apostrophes, and question marks from the message
   user_message_stripped = user_message.gsub(/[,.?']/, '').downcase.strip
-  dialogs_array =[' ',' ']
+  arraycheck = 0
   
   dialogs = CSV.table("dialogs.csv", converters: :all)
     dialogs_array = dialogs.find  do |row|
@@ -68,19 +68,26 @@ def chitchat(user_message)
     end
   
   # Search for a matching message in the hash
-  response = dialogs_array[1]
+  if dialogs_array.nil?
+    arraycheck = 2
+  end
 
   # If a response is found, return it
-  if response
-    
+  if arraycheck == 1
+    response = dialogs_array[1]
     return response
     
   
-  elsif
+  elsif arraycheck == 2
   # Wit.ai function
   response = wit_client.message(user_message)
-  return response
-  
+    if response.nil?
+      arraycheck = 0
+      
+    else  
+      return response
+    end
+    
   else
   # If no response is found, return a default message
   return "I'm sorry, I didn't quite understand."

@@ -10,7 +10,7 @@ require 'wit'
 
 list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','🖐','send_nudes','shush','shut','cigarette','coffee','coin','digging','burn','rank','fusion','runes','relics','catfish','dolmen','moral','temple_titles','hall_of_war','totems','kill']
 
-WIT_CLIENT = Wit.new(access_token: "ZYD53KXAQK6IMGPVC2WEPF4U4E3EG5AF")
+WIT_CLIENT = Wit.new(access_token: "XS6RQGJMVJAJDWCFMEU3A744P5CZ2RGO")
 
 @agatha_bot = Discordrb::Commands::CommandBot.new(
   token: ENV["TOKEN"],

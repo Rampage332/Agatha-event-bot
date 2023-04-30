@@ -8,8 +8,6 @@ require 'csv'
 require 'bundler'
 # require 'wit'
 
-dialogs = CSV.read('dialogs.csv', headers: true)
-
 list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','🖐','who','I','i','send_nudes','shush','shut','cigarette','coffee','coin','digging','burn','rank','fusion','runes','relics','catfish','dolmen','moral','temple_titles','hall_of_war','totems','thanks','thank','kill']
 
 # WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
@@ -60,23 +58,36 @@ list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','�
 
 # Define the chitchat function
 # Load the dialogs from the text file
-dialogs = File.readlines('dialogs.txt', chomp: true).map { |line| line.split("\t") }.to_h
+
+def load_dialogs(dialogs.csv)
+  dialogs = {}
+
+  CSV.foreach(dialogs.csv) do |row|
+    message = row[0].strip.downcase
+    response = row[1].strip
+    dialogs[message] = response
+  end
+
+  return dialogs
+end
 
 def chitchat(message, dialogs)
   # Remove commas, periods, apostrophes, and question marks from the message
   message = message.gsub(/[,.?']/, '').downcase.strip
 
   # Search for a matching message in the hash
-    response = dialogs.detect { |line| line.split("\t")[0] == message }
+  response = dialogs[message]
 
   # If a response is found, return it
   if response
-    return response.split("\t")[1]
+    return response
   end
 
   # If no response is found, return a default message
   return "I'm sorry, I didn't quite understand."
 end
+
+dialogs = load_dialogs('dialogs.csv')
 
 @agatha_bot.mention do |event|
   is_command = true

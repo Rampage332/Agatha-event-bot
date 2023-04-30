@@ -75,17 +75,16 @@ def chitchat(user_message)
     
     return response
     
-  end
   
   elsif
   # Wit.ai function
   response = wit_client.message(user_message)
   return response
-  end
   
   else
   # If no response is found, return a default message
   return "I'm sorry, I didn't quite understand."
+  
   end
 end
 

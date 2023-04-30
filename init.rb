@@ -80,7 +80,7 @@ def chitchat(user_message)
   
   elsif arraycheck == 2
   # Wit.ai function
-  response = wit_client.message(user_message)
+  response = WIT_CLIENT.message(user_message)
     if response.nil?
       arraycheck = 0
       

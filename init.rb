@@ -62,35 +62,27 @@ def chitchat(user_message)
   user_message_stripped = user_message.gsub(/[,.?']/, '').downcase.strip
   arraycheck = 0
   
+  # Search for a matching message in the CSV
   dialogs = CSV.table("dialogs.csv", converters: :all)
     dialogs_array = dialogs.find  do |row|
     row.field(:message) == user_message_stripped
     end
   
-  # Search for a matching message in the hash
   if dialogs_array.nil?
-    arraycheck = 2
-  end
-
-  # If a response is found, return it
-  if arraycheck == 1
-    response = dialogs_array[1]
-    return response
+    # Send to Wit.ai for intent
+    response = WIT_CLIENT.message(user_message)
     
-  
-  elsif arraycheck == 2
-  # Wit.ai function
-  response = WIT_CLIENT.message(user_message)
     if response.nil?
-      arraycheck = 0
-      puts user_message
-    else  
+      # If no response is found, return a default message
+      return "I'm sorry, I didn't quite understand."
+    else
       return response
     end
     
   else
-  # If no response is found, return a default message
-  return "I'm sorry, I didn't quite understand."
+    # If a response is found, return it
+    response = dialogs_array[1]
+    return response
   
   end
 end

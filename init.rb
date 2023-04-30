@@ -82,6 +82,7 @@ end
   command_check = event.message.content.split(' ')
   if list_of_commands.include? command_check[1].downcase
     is_command = false
+  end
   
   # Check if the bot is mentioned and no command is presented
   if event.message.mentions.include?(@agatha_bot.profile) && is_command

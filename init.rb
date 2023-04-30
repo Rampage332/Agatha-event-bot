@@ -89,9 +89,10 @@ end
   # Check if the bot is mentioned and no command is presented
   if event.message.mentions.include?(@agatha_bot.profile) && is_command
     # Call the chitchat function to generate a response
-    response = chitchat(event.message.content)
+    umessage = event.message.content.split.drop(1).join(' ')
+    respond = chitchat(umessage)
     # Send the response back to the user
-    event.message.reply(response)
+    event.message.reply(respond)
   end
 end
 

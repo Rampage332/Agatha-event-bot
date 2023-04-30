@@ -81,6 +81,7 @@ if event.message.mentions.include?(@agatha_bot.profile)
   
   # Send the response back to the user
   event.message.reply(response)
+ end
 end
 
 #========================================================================================

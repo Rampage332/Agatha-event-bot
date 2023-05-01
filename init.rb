@@ -2,6 +2,7 @@ require 'discordrb'
 require_relative 'event_list'
 require_relative 'partner_list'
 require_relative 'honor_list'
+require_relative 'chitchat'
 require 'dotenv/load'
 require 'pry'
 require 'csv'
@@ -33,9 +34,9 @@ list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','�
   if event.message.mentions.include?(@agatha_bot.profile) && is_command
     # Call the chitchat function to generate a response
     umessage = event.message.content.split.drop(1).join(' ')
-    respond = chitchat(umessage)
+    responsd = ChatChat.new(umessage)
     # Send the response back to the user
-    event.message.reply(respond)
+    event.message.reply(respond.chitchat())
   end
 end
 

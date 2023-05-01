@@ -35,7 +35,7 @@ class ChitChat
       
         wit_response = WIT_CLIENT.message(@chat)
         intent = wit_response['intents'][0]['name']
-        response = getResponse(intent)
+        response = getResponse(intent.downcase)
     
       if intent.nil?
         # If no response is found, return a default message

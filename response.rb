@@ -27,19 +27,16 @@ def get_random_fact
       return response
    else
       puts "Error: #{http_response.code} #{http_response.body}"
-end
+    end
   
 end
 
 def get_random_fact
-  api_choice = rand(1..2)
-    case api_choice
-    when 1
+
      fact = get_random_fact
-    when 2
-     fact = get_chuck_norris_fact
-  end
+  
   return fact
+  
 end
 
 # Define Random joke function ===================================================

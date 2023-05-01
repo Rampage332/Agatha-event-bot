@@ -134,7 +134,7 @@ def getResponse(intent)
       
     #==============================================
         
-  else then return "I'm sorry, I didn't quite understand"
+  else return "I'm sorry, I didn't quite understand"
         
   end
 end

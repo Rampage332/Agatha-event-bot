@@ -4,7 +4,6 @@ require_relative 'partner_list'
 require_relative 'honor_list'
 require_relative 'chitchat'
 require_relative 'response'
-require_relative 'get_meme'
 require 'dotenv/load'
 require 'pry'
 require 'csv'
@@ -39,8 +38,18 @@ list_of_commands = ['comlist','help','honor','partner','✊','✌️','🖐','se
     if event.message.content.downcase.include? ("chuck norris")
       respond = "Did someone say Chuck Norris? \n" + get_chuck_norris_fact()
       
-    elsif event.message.content.downcase.include? ("meme"
-      get_random_meme()
+    elsif event.message.content.downcase.include? ("meme")
+      
+        # Get a random meme URL from the API
+        response = HTTParty.get("https://api.imgflip.com/get_memes")
+        memes = response["data"]["memes"]
+        random_meme = memes.sample
+        meme_url = random_meme["url"]
+      
+      
+        event.channel.send_embed do |embed|
+          embed.title = random_meme["name"]
+          embed.image = Discordrb::Webhooks::EmbedImage.new(url: meme_url)
     
     else
     # Call the chitchat function to generate a response

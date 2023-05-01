@@ -31,7 +31,7 @@ def get_random_fact
   
 end
 
-def get_random_fact
+def get_fact
 
      fact = get_random_fact
   
@@ -114,7 +114,7 @@ def getResponse(intent)
       end    
     #==============================================
     
-    when 'fact' then response = get_random_fact()
+    when 'fact' then response = get_fact()
       
     #==============================================
     

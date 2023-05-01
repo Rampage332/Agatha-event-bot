@@ -53,7 +53,7 @@ def getResponse(intent)
         
       else
         return 'Howdy 👩‍🌾'
-        
+      end    
    #==============================================
     
     when 'goodbye'
@@ -68,7 +68,7 @@ def getResponse(intent)
         
       else
         return 'Take care! 🖐'
-        
+      end    
    #==============================================
         
     when 'compliment'
@@ -83,13 +83,13 @@ def getResponse(intent)
         
       else
         return "Thanks"
-        
+      end    
     #==============================================
     
     when 'fact'
         
     then response = get_random_fact()
-        
+     end     
     #==============================================
     
     when 'trivia'
@@ -102,7 +102,7 @@ def getResponse(intent)
       result = JSON.parse(response)
       question = result['results'][0]['question']
       return "Here's a random trivia question for you: #{question}"
-        
+      end    
     #==============================================
     
     when 'thank_you'
@@ -117,7 +117,7 @@ def getResponse(intent)
         
       else
         return "You're most welcome!"
-        
+      end    
     #==============================================
     
     when 'apology'
@@ -132,13 +132,13 @@ def getResponse(intent)
         
       else
         return "No problem"
-        
+      end    
     #==============================================
     
     when 'joke'
         
     then return get_joke
-        
+    end      
     #==============================================
         
   else 

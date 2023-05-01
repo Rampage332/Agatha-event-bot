@@ -34,7 +34,7 @@ list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','�
   if event.message.mentions.include?(@agatha_bot.profile) && is_command
     # Call the chitchat function to generate a response
     umessage = event.message.content.split.drop(1).join(' ')
-    responsd = ChatChat.new(umessage)
+    responsd = ChitChat.new(umessage)
     # Send the response back to the user
     event.message.reply(respond.chitchat())
   end

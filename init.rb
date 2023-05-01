@@ -41,10 +41,11 @@ list_of_commands = ['comlist','help','honor','partner','✊','✌️','🖐','se
     elsif event.message.content.downcase.include? ("meme")
       
         # Get a random meme URL from the API
-        response = HTTParty.get("https://api.imgflip.com/get_memes")
-        memes = response["data"]["memes"]
-        random_meme = memes.sample
-        meme_url = random_meme["url"]
+          response = HTTParty.get('https://www.reddit.com/r/memes/random.json', headers: {"User-Agent": "Agatha Discord Bot"})
+           json = JSON.parse(response.body)
+            data = json[0]['data']['children'][0]['data']
+            name = data['title']
+            meme_url = data['url']
       
       
         event.channel.send_embed do |embed|

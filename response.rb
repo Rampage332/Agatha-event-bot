@@ -12,12 +12,23 @@ def get_chuck_norris_fact
   json['value']
 end
 
-def get_harry_potter_fact
-  url = 'https://hp-api.herokuapp.com/api/characters/random'
-  uri = URI(url)
-  response = Net::HTTP.get(uri)
-  json = JSON.parse(response)
-  json['name']
+def get_random_fact
+   api_url = "https://api.api-ninjas.com/v1/facts?limit=#{1}"
+   uri = URI(api_url)
+   request = Net::HTTP::Get.new(uri)
+   request['X-Api-Key'] = 'AbSquahWZRQsL1fVDe+LgQ==ExYqLFztboReHw2N'
+   http_response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http| 
+     http.request(request)
+   end
+  
+   if http_response.is_a?(Net::HTTPSuccess)
+      json = JSON.parse(response.body)
+      response = json['data'][0]['fact']
+      return response
+   else
+      puts "Error: #{http_response.code} #{http_response.body}"
+end
+  
 end
 
 def get_anime_fact
@@ -34,7 +45,7 @@ def get_random_fact
     when 1
      fact = get_chuck_norris_fact
     when 2
-     fact = get_harry_potter_fact
+     fact = get_random_fact
    when 3
      fact = get_anime_fact
   end

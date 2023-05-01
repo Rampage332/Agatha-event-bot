@@ -36,14 +36,14 @@ end
 # getResponse Function ===========================================================
 
 def getResponse(intent)
+  
   i = Random.new.rand(1..3)
+  
   case intent
     
     #==============================================
     
-    when 'greetings'
-    
-    then
+    when 'greetings' then
       
       if i ==1
         return 'Hi, how may I help you?'
@@ -53,13 +53,12 @@ def getResponse(intent)
         
       else
         return 'Howdy 👩‍🌾'
+        
       end    
    #==============================================
     
-    when 'goodbye'
- 
-    then
-          
+    when 'goodbye' then
+           
       if i ==1
         return 'See ya!🖐'
       
@@ -68,13 +67,13 @@ def getResponse(intent)
         
       else
         return 'Take care! 🖐'
+        
       end    
+      
    #==============================================
         
-    when 'compliment'
+    when 'compliment' then
         
-    then
-      
       if i ==1
         return "Thank you! You're too kind"
       
@@ -83,32 +82,27 @@ def getResponse(intent)
         
       else
         return "Thanks"
+        
       end    
     #==============================================
     
-    when 'fact'
-        
-    then response = get_random_fact()
-     end     
+    when 'fact' then response = get_random_fact()
+      
     #==============================================
     
-    when 'trivia'
-    
-    then
-      
+    when 'trivia' then
+
       url = 'https://opentdb.com/api.php?amount=1&type=multiple'
       uri = URI(url)
       response = Net::HTTP.get(uri)
       result = JSON.parse(response)
       question = result['results'][0]['question']
       return "Here's a random trivia question for you: #{question}"
-      end    
+      
     #==============================================
     
-    when 'thank_you'
-      
-    then
-        
+    when 'thank_you' then
+   
       if i ==1
         return "Anytime!"
       
@@ -117,13 +111,13 @@ def getResponse(intent)
         
       else
         return "You're most welcome!"
+        
       end    
+      
     #==============================================
     
-    when 'apology'
-        
-    then
-        
+    when 'apology' then
+ 
       if i ==1
         return "No worries .. "
       
@@ -132,17 +126,15 @@ def getResponse(intent)
         
       else
         return "No problem"
+        
       end    
     #==============================================
     
-    when 'joke'
-        
-    then return get_joke
-    end      
+    when 'joke' then return get_joke
+      
     #==============================================
         
-  else 
-      
-  then return "I'm sorry, I didn't quite understand"
+  else then return "I'm sorry, I didn't quite understand"
         
+  end
 end

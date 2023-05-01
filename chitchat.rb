@@ -1,3 +1,4 @@
+require_relative 'response'
 require 'active_support/all'
 require 'pry'
 require 'dotenv/load'

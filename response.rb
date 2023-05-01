@@ -23,7 +23,7 @@ def get_random_fact(limit)
   
    if http_response.is_a?(Net::HTTPSuccess)
       json = JSON.parse(http_response.body)
-      response = json['data'][0]['fact']
+      response = json[0]['fact']
       return response
    else
       puts "Error: #{http_response.code} #{http_response.body}"

@@ -10,8 +10,6 @@ require 'wit'
 
 list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','🖐','send_nudes','shush','shut','cigarette','coffee','coin','digging','burn','rank','fusion','runes','relics','catfish','dolmen','moral','temple_titles','hall_of_war','totems','kill']
 
-WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
-
 @agatha_bot = Discordrb::Commands::CommandBot.new(
   token: ENV["TOKEN"],
   client_id: ENV["C_ID"],
@@ -21,74 +19,7 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
   ignore_bots: true
 )
 
-#==========================================================================================
-# General Chitchat function
-
-# def chitchat(wit_client, message, bot_id)
-#  Remove the bot's ID from the message..
-#   message = message.gsub("<@#{ENV['BOT_ID']}>", "").strip
-
-# Call Wit.ai message API to get a response based on the user's input
-#   response = wit_client.message(message)
-
-# Check if the response includes a 'text' field and if it's not empty
-#   if response.key?("text") && !response["text"].empty?
-# Return the response text from the Wit.ai response
-#     return response["text"]
-#   end
-
-# Return a default response if the Wit.ai response does not contain any text
-#   return "I'm sorry, I didn't quite get that."
-  
-# end
-
-#@agatha_bot.mention do |event|
-  # Check if the bot was mentioned without a specific command
- # if event.message.mentions.include?(@agatha_bot.profile)
-    # Call chitchat function to generate a natural language response
-  #  response = chitchat(WIT_CLIENT, event.content, @agatha_bot.profile.id)
-
-    # Reply with the generated response
-   # event.message.reply(response)
-  #end
-#end
-
 #========================================================================================
-
-# CSV Based Dialog
-
-def chitchat(user_message)
-  # Remove commas, periods, apostrophes, and question marks from the message
-  user_message_stripped = user_message.gsub(/[,.?']/, '').downcase.strip
-  arraycheck = 0
-  
-  # Search for a matching message in the CSV
-  dialogs = CSV.table("dialogs.csv", converters: :all)
-    dialogs_array = dialogs.find  do |row|
-    row.field(:message) == user_message_stripped
-    end
-  
-  if dialogs_array.nil?
-    # Send to Wit.ai for intent
-       #  response = "The message being passed to Wit.ai is: " + user_message
-       # response = WIT_CLIENT.message(user_message)
-       puts WIT_CLIENT.message(user_message)
-       response = ""
-    
-    if response.nil?
-      # If no response is found, return a default message
-      return "I'm sorry, I didn't quite understand."
-    else
-      return response
-    end
-    
-  else
-    # If a response is found, return it
-    response = dialogs_array[1]
-    return response
-  
-  end
-end
 
 @agatha_bot.mention do |event|
   is_command = true

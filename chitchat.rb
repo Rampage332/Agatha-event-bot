@@ -48,4 +48,3 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
   
     end
   end
-end

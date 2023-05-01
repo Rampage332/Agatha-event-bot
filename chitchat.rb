@@ -32,10 +32,12 @@ class ChitChat
       # Send to Wit.ai for intent
          #  response = "The message being passed to Wit.ai is: " + user_message
         # response = WIT_CLIENT.message(user_message)
-        puts WIT_CLIENT.message(@chat)
-        response = ""
+      
+        wit_response = WIT_CLIENT.message(@chat)
+        intent = wit_response['intents'][0]['name']
+        response = getResponse(intent)
     
-      if response.nil?
+      if intent.nil?
         # If no response is found, return a default message
         
         sorry

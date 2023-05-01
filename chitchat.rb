@@ -25,7 +25,7 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
          #  response = "The message being passed to Wit.ai is: " + user_message
         # response = WIT_CLIENT.message(user_message)
       
-        wit_response = WIT_CLIENT.message(@chat)
+        wit_response = WIT_CLIENT.message(message)
         intent = wit_response['intents'][0]['name']
         response = getResponse(intent.downcase)
     

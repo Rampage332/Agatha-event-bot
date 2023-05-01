@@ -3,6 +3,7 @@ require_relative 'event_list'
 require_relative 'partner_list'
 require_relative 'honor_list'
 require_relative 'chitchat'
+require_relative 'response'
 require 'dotenv/load'
 require 'pry'
 require 'csv'
@@ -32,11 +33,18 @@ list_of_commands = ['comlist','help','honor','partner','✊','✌️','🖐','se
 
   # Check if the bot is mentioned and no command is presented
   if event.message.mentions.include?(@agatha_bot.profile) && is_command
+    
+    if event.message.content.downcase.include? ("chuck norris")
+      respond = "Did someone say Chuck Norris? \n" + get_chuck_norris_fact()
+    
+    else
     # Call the chitchat function to generate a response
     umessage = event.message.content.split.drop(1).join(' ')
     respond = chitchat(umessage)
+      end
     # Send the response back to the user
     event.message.reply(respond)
+    
   end
 end
 

@@ -22,7 +22,7 @@ def get_random_fact
    end
   
    if http_response.is_a?(Net::HTTPSuccess)
-      json = JSON.parse(response.body)
+      json = JSON.parse(http_response.body)
       response = json['data'][0]['fact']
       return response
    else

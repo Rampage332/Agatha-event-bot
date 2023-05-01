@@ -18,7 +18,7 @@ class ChitChat
   
   def chitchat()
     # Remove commas, periods, apostrophes, and question marks from the message
-    user_message_stripped = @chat.gsub(/[,.?']/, '').downcase.strip
+    user_message_stripped = @message.gsub(/[,.?']/, '').downcase.strip
     arraycheck = 0
     sorry = "I'm sorry, I didn't quite understand."
   

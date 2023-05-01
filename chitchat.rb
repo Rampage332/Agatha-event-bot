@@ -7,18 +7,10 @@ require 'wit'
 WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 
 # CSV Based Dialog
-
-class ChitChat
   
-  def initialize(chat)
-    
-    @message = chat
-  
-  end
-  
-  def chitchat()
+  def chitchat(message)
     # Remove commas, periods, apostrophes, and question marks from the message
-    user_message_stripped = @message.gsub(/[,.?']/, '').downcase.strip
+    user_message_stripped = message.gsub(/[,.?']/, '').downcase.strip
     arraycheck = 0
     sorry = "I'm sorry, I didn't quite understand."
   

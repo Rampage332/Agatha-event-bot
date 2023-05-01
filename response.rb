@@ -43,6 +43,8 @@ def getResponse(intent)
     
     when 'greetings'
     
+    then
+      
       if i ==1
         return 'Hi, how may I help you?'
       
@@ -56,6 +58,8 @@ def getResponse(intent)
     
     when 'goodbye'
  
+    then
+          
       if i ==1
         return 'See ya!🖐'
       
@@ -69,6 +73,8 @@ def getResponse(intent)
         
     when 'compliment'
         
+    then
+      
       if i ==1
         return "Thank you! You're too kind"
       
@@ -81,11 +87,15 @@ def getResponse(intent)
     #==============================================
     
     when 'fact'
-        response = get_random_fact()
+        
+    then response = get_random_fact()
         
     #==============================================
     
     when 'trivia'
+    
+    then
+      
       url = 'https://opentdb.com/api.php?amount=1&type=multiple'
       uri = URI(url)
       response = Net::HTTP.get(uri)
@@ -96,6 +106,8 @@ def getResponse(intent)
     #==============================================
     
     when 'thank_you'
+      
+    then
         
       if i ==1
         return "Anytime!"
@@ -110,6 +122,8 @@ def getResponse(intent)
     
     when 'apology'
         
+    then
+        
       if i ==1
         return "No worries .. "
       
@@ -122,11 +136,13 @@ def getResponse(intent)
     #==============================================
     
     when 'joke'
-        return get_joke
+        
+    then return get_joke
         
     #==============================================
         
-  else  
-        return "I'm sorry, I didn't quite understand"
+  else 
+      
+  then return "I'm sorry, I didn't quite understand"
         
 end

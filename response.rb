@@ -12,8 +12,8 @@ def get_chuck_norris_fact
   json['value']
 end
 
-def get_random_fact
-   api_url = "https://api.api-ninjas.com/v1/facts?limit=#{1}"
+def get_random_fact(limit)
+   api_url = "https://api.api-ninjas.com/v1/facts?limit=#{limit}"
    uri = URI(api_url)
    request = Net::HTTP::Get.new(uri)
    request['X-Api-Key'] = 'AbSquahWZRQsL1fVDe+LgQ==ExYqLFztboReHw2N'
@@ -27,16 +27,13 @@ def get_random_fact
       return response
    else
       puts "Error: #{http_response.code} #{http_response.body}"
-    end
+   end
   
 end
 
 def get_fact
-
-     fact = get_random_fact
-  
+  fact = get_random_fact(1)
   return fact
-  
 end
 
 # Define Random joke function ===================================================

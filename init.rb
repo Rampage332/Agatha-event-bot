@@ -9,7 +9,7 @@ require 'csv'
 require 'bundler'
 require 'wit'
 
-list_of_commands = ['comlist','help','hello','honor','partner','✊','✌️','🖐','send_nudes','shush','shut','cigarette','coffee','coin','digging','burn','rank','fusion','runes','relics','catfish','dolmen','moral','temple_titles','hall_of_war','totems','kill']
+list_of_commands = ['comlist','help','honor','partner','✊','✌️','🖐','send_nudes','shush','shut','cigarette','coffee','coin','digging','burn','fusion','runes','relics','catfish','dolmen','moral','temple_titles','hall_of_war','totems','kill']
 
 @agatha_bot = Discordrb::Commands::CommandBot.new(
   token: ENV["TOKEN"],
@@ -691,10 +691,6 @@ end
 
 @agatha_bot.command(:shut) do |event|
   event.respond "No, you STFU! "
-end
-
-@agatha_bot.command(:hello) do |event|
-  event.respond "Hello chief #{event.user.mention} how can I help you today?"
 end
 
 @agatha_bot.command(:cigarette) do |event|

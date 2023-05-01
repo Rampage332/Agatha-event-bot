@@ -49,7 +49,7 @@ list_of_commands = ['comlist','help','honor','partner','✊','✌️','🖐','se
       
       
         event.channel.send_embed do |embed|
-          embed.title = random_meme["name"]
+          embed.title = name
           embed.image = Discordrb::Webhooks::EmbedImage.new(url: meme_url)
         end
     

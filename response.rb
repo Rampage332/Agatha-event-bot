@@ -124,5 +124,9 @@ def getResponse(intent)
     when 'joke'
         return get_joke
         
+    #==============================================
+        
   else  
+        return "I'm sorry, I didn't quite understand"
+        
 end

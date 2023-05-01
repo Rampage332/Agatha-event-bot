@@ -34,8 +34,12 @@ list_of_commands = ['comlist','help','honor','partner','✊','✌️','🖐','se
   # Check if the bot is mentioned and no command is presented
   if event.message.mentions.include?(@agatha_bot.profile) && is_command
     
+    # Chuck norris function
     if event.message.content.downcase.include? ("chuck norris")
       respond = "Did someone say Chuck Norris? \n" + get_chuck_norris_fact()
+      
+    elsif event.message.content.downcase.include? ("meme"
+      get_random_meme()
     
     else
     # Call the chitchat function to generate a response

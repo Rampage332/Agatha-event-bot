@@ -14,7 +14,7 @@ class GetEvent
     
     if @event.description.nil?
       
-      thumbnail_line = ""
+      @thumbnail = "https://i.imgur.com/FrnqoHa.jpg"
       
     else
         desc_lines = @event.description.split("\n")
@@ -33,7 +33,15 @@ class GetEvent
   end
 
   def description
-    @event.description.lines[3..].join.strip
+    
+    if @event.description.nil?
+      
+          @event.description = event_name
+    else
+      
+         @event.description.lines[3..].join.strip
+      
+    end
   end
 
   def starts_on

@@ -63,7 +63,7 @@ events_list = ['smilodon','strongest barbarian','king wolf','power up','altar','
     if events_list.include? respond
   
       # Brutal Age events function  ... 
-      ba_event = getEvent.new
+      ba_event = getEvent.new(respond)
       event.channel.send_embed do |embed|
                     embed.colour = 0xFF4000
                     embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url:ba_event.thumbnail)

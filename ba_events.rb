@@ -14,7 +14,7 @@ class GetEvent
   def fetch_event
     events = @calendar.list_events(
         @calendar_id,
-        max_results: 50,
+        max_results: 100,
         single_events: true,
         order_by: 'startTime',
         time_min: Time.now.iso8601
@@ -25,7 +25,6 @@ class GetEvent
       puts "Description: #{event.description}"
       puts "Start Time: #{event.start.date_time}"
       puts "End Time: #{event.end.date_time}"
-      puts "Location: #{event.location}"
       puts "-------------------------"
     end
 

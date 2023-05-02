@@ -4,7 +4,7 @@ class GetEvent
   def initialize(event_name)
     @event_name = event_name
     @calendar = Google::Apis::CalendarV3::CalendarService.new
-    @calendar.authorization = nil # Use public calendar, no authorization needed
+    @calendar.key = 'AIzaSyDiEL4wGEJJn84x_RxroUj92XtHhbEKTFI'
     @calendar_id = 'cnI1Ym91dG04NnZuMDJvMGRzcmtqdWk0b2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ'
     @event = fetch_event
   end

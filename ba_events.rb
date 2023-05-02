@@ -14,6 +14,7 @@ class GetEvent
 
     desc_lines = @event.description.split("\n")
     thumbnail_line = desc_lines[1]
+    
     if thumbnail_line.nil?
       @thumbnail = "https://i.imgur.com/FrnqoHa.jpg"
     else

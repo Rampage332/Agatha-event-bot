@@ -59,7 +59,7 @@ events_list = ['hunting season','adventure path','smilodon attack','strongest ba
     # Call the chitchat function to generate a response
     umessage = event.message.content.split.drop(1).join(' ')
     respond = chitchat(umessage)
-      end
+    end
     # Send the response back to the user
     if events_list.include? respond
   
@@ -76,9 +76,11 @@ events_list = ['hunting season','adventure path','smilodon attack','strongest ba
                     embed.add_field(name: "Time until", value: ba_event.time_left_tostart, inline: true)
                     embed.add_field(name: "Time to finish", value: ba_event.time_left_tofinish, inline: true)
                     embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
+      end
     else 
         
        event.message.reply(respond)
+    end
     
   end
 end

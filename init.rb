@@ -59,7 +59,12 @@ list_of_commands = ['comlist','help','honor','partner','✊','✌️','🖐','se
     respond = chitchat(umessage)
       end
     # Send the response back to the user
-    event.message.reply(respond)
+    if respond = "BA_event"
+      
+      # Brutal Age events function  ... 
+      
+    else 
+       event.message.reply(respond)
     
   end
 end
@@ -189,60 +194,6 @@ end
     "
   end
 end
-
-#==========================================================================================
-
-#Brutal Age Events function
-
-# @agatha_bot.command(:next) do |event|
-#  params = event.message.content.split(' ')
-#  return unless params.size > 1
-#
-#  if params[0] == "<@!740929277318398003>" || params[0] == "<@740929277318398003>"
-#      params[0] = params[1]
-#      params[1] = params[2]
-#      params[2] = params[3]
-#  end
-#
-#  type = params[2].downcase rescue "old"
-#
-#  event_list = EventList.new type
-#  details = event_list.next_event(params[1])
-#
-# event.channel.send_embed do |embed|
-#    embed.colour = 0xFF4000
-#    embed.title = details[:name]
-#    embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: details[:thumbnail])
-#    embed.add_field(name: 'Time until', value: details[:starts_in], inline: false)
-#    embed.add_field(name: "> Tips", value: details[:tips], inline: false)
-#  end
-#end
-#
-#@agatha_bot.command(:current_event) do |event|
-#  type = event.message.content.split(' ')[1].downcase rescue "old"
-#
-#  event_list = EventList.new type
-#  details = event_list.current_event
-#  details_count = details.size
-#
-#  event.channel.send_embed do |embed|
-#    embed.colour = 0xFF4000
-#    embed.title = details[0][:name]
-#    embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: details[0][:thumbnail])
-#    embed.add_field(name: 'Time remaining', value: details[0][:ends_in], inline: false)
-#    embed.add_field(name: "> Tips", value: details[0][:tips], inline: false)
-#  end
-#
-#  if details_count > 1
-#    event.channel.send_embed do |embed|
-#      embed.colour = 0xFF8000
-#      embed.title = details[1][:name]
-#      embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: details[1][:thumbnail])
-#      embed.add_field(name: 'Time remaining', value: details[1][:ends_in], inline: false)
-#      embed.add_field(name: "> Tips", value: details[1][:tips], inline: false)
-#    end
-# end
-#end
 
 #==========================================================================================
 

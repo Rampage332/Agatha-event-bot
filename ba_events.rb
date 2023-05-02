@@ -9,65 +9,28 @@ class GetEvent
     @event = fetch_event
   end
 
-  def thumbnail
-    return @thumbnail if @thumbnail
-    
-    if @event.description.nil?
-      
-      @thumbnail = "https://i.imgur.com/FrnqoHa.jpg"
-      
-    else
-        desc_lines = @event.description.split("\n")
-        thumbnail_line = desc_lines[1]
-    end
-    
-    if thumbnail_line.nil?
-      @thumbnail = "https://i.imgur.com/FrnqoHa.jpg"
-    else
-      @thumbnail = thumbnail_line.split('"')[1]
-    end
-  end
 
-  def title
-    @event.summary
-  end
-
-  def description
-    
-        return event_name if @event.description.nil?
-        @event.description.lines[3..].join.strip
-    
-  end
-
-  def starts_on
-    @event.start.date_time.strftime('%a, %d %b %Y %H:%M:%S %z')
-  end
-
-  def time_left_tostart
-    now = Time.now.utc
-    start_time = @event.start.date_time
-    return "Event has already started." if start_time <= now
-
-    time_left = start_time - now
-    Time.at(time_left).utc.strftime("%H:%M:%S")
-  end
-
-  def time_left_tofinish
-    now = Time.now.utc
-    end_time = @event.end.date_time
-    return "Event has already ended." if end_time <= now
-
-    time_left = end_time - now
-    Time.at(time_left).utc.strftime("%H:%M:%S")
-  end
-
-  private
 
   def fetch_event
-    events = @calendar.list_events(@calendar_id, max_results: 100, single_events: true, order_by: 'startTime', time_min: Time.now.iso8601)
-#    events.items.each do |event|
-#      puts event.summary
-#    end
+    events = @calendar.list_events(
+        @calendar_id,
+        max_results: 50,
+        single_events: true,
+        order_by: 'startTime',
+        time_min: Time.now.iso8601
+        )
+
+    events.items.each do |event|
+      puts "Summary: #{event.summary}"
+      puts "Description: #{event.description}"
+      puts "Start Time: #{event.start.date_time}"
+      puts "End Time: #{event.end.date_time}"
+      puts "Location: #{event.location}"
+      puts "-------------------------"
+    end
+
     events.items.find { |event| event.summary.downcase.include?(@event_name.downcase) }
+  
   end
+
 end

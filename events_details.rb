@@ -1,7 +1,7 @@
 require 'active_support/all'
 require 'pry'
 
-def EventsDetails
+def eventsDetails
 
   def initialize(event)
   

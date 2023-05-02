@@ -5,7 +5,7 @@ class GetEvent
     @event_name = event_name
     @calendar = Google::Apis::CalendarV3::CalendarService.new
     @calendar.key = 'AIzaSyDiEL4wGEJJn84x_RxroUj92XtHhbEKTFI'
-    @calendar_id = 'cnI1Ym91dG04NnZuMDJvMGRzcmtqdWk0b2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ'
+    @calendar_id = 'rr5boutm86vn02o0dsrkjui4og@group.calendar.google.com'
     @event = fetch_event
   end
 

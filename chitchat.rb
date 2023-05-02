@@ -31,6 +31,7 @@ events_list = ['hunting season','adventure path','smilodon attack','strongest ba
         puts wit_response
         intent = wit_response['intents'][0]['name']
         entity_keyword = wit_response['entities']['Brutal_Age_events:Brutal_Age_events'][0]['value']
+        puts entity_keyword
         response = getResponse(intent.downcase)
     
       if intent.nil?

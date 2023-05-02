@@ -36,6 +36,13 @@ def get_fact
   return fact
 end
 
+def get_event_name
+  
+  
+  return event_name
+
+end
+
 # Define Random joke function ===================================================
 
 def get_joke

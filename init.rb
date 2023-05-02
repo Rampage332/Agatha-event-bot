@@ -70,10 +70,10 @@ events_list = ['hunting season','adventure path','smilodon attack','strongest ba
       ba_event = GetEvent.new(respond)
       event.channel.send_embed do |embed|
                     embed.colour = 0xFF4000
-                    embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url:ba_event_detail.url)
+                    embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url:ba_event_detail.thumbnail)
                     embed.author = Discordrb::Webhooks::EmbedAuthor.new(name: "Brutal Age Events")
                     embed.title = ba_event.title
-                    embed.description = ba_event_detail.tip
+                    embed.description = ba_event_detail.tips
                     embed.add_field(name: 'Starts on (UTC)', value: ba_event.starts_on, inline: true)
                     embed.add_field(name: "Time until", value: ba_event.time_left_tostart, inline: true)
                     embed.add_field(name: "Time to finish", value: ba_event.time_left_tofinish, inline: true)

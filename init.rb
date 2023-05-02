@@ -66,7 +66,7 @@ events_list = ['hunting season','adventure path','smilodon attack','strongest ba
   
       # Brutal Age events function  ... 
       puts respond
-      ba_event_detail = EventDetails.new(respond.downcase)
+      ba_event_detail = EventsDetails.new(respond.downcase)
       ba_event = GetEvent.new(respond.downcase)
       event.channel.send_embed do |embed|
                     embed.colour = 0xFF4000

@@ -28,7 +28,7 @@ events_list = ['hunting season','adventure path','smilodon attack','strongest ba
         # response = WIT_CLIENT.message(user_message)
       
         wit_response = WIT_CLIENT.message(message)
-        puts response
+        puts wit_response
         intent = wit_response['intents'][0]['name']
         entity_keyword = wit_response['entities']['your_entity_name'][0]['value']
         response = getResponse(intent.downcase)

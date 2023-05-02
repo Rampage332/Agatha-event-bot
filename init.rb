@@ -59,15 +59,15 @@ events_list = ['hunting season','adventure path','smilodon attack','strongest ba
     else
     # Call the chitchat function to generate a response
     umessage = event.message.content.split.drop(1).join(' ')
-    respond = chitchat(umessage)
+    respond = chitchat(umessage).downcase
     end
     # Send the response back to the user
     if events_list.include? respond
   
       # Brutal Age events function  ... 
       
-      ba_event_detail = Events.new(respond.downcase)
-      ba_event = GetEvent.new(respond.downcase)
+      ba_event_detail = Events.new(respond)
+      ba_event = GetEvent.new(respond)
       event.channel.send_embed do |embed|
                     embed.colour = 0xFF4000
                     embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url:ba_event_detail.url)

@@ -46,7 +46,7 @@ events_list = ['hunting season','adventure path','smilodon attack','strongest ba
           
         else
           
-          if ba_events list.include? entity_keyword.downcase
+          if events_list.include? entity_keyword.downcase
           
             return entity_keyword
           

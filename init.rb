@@ -437,13 +437,13 @@ end
                 > 25- Dragoness
                 > 26- Messenger
                 > 27- Golk
-                > 28- Syren the Mermaid
+                > 28- Syren
                 > 29- Sworddevil
-                > 30- Voodoo Specter
-                > 31- Babur the Tiger King
-                > 32- Monk Chadric
-                > 33- Zither Goddess
-                > 34- Phantom Assassin
+                > 30- Voodoo
+                > 31- Babur
+                > 32- Monk
+                > 33- Zither
+                > 34- Assassin
 
                 Example: @Agatha² partner Blue Rockwell
                 "

@@ -11,9 +11,15 @@ class GetEvent
 
   def thumbnail
     return @thumbnail if @thumbnail
-
-    desc_lines = @event.description.split("\n")
-    thumbnail_line = desc_lines[1]
+    
+    if @event.description.nil?
+      
+      thumbnail_line = ""
+      
+    else
+        desc_lines = @event.description.split("\n")
+        thumbnail_line = desc_lines[1]
+    end
     
     if thumbnail_line.nil?
       @thumbnail = "https://i.imgur.com/FrnqoHa.jpg"

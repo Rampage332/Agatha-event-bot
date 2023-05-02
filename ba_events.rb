@@ -1,6 +1,6 @@
 require 'google/apis/calendar_v3'
 
-class getEvent
+class GetEvent
   def initialize(event_name)
     @event_name = event_name
     @calendar = Google::Apis::CalendarV3::CalendarService.new

@@ -7,6 +7,7 @@ require 'wit'
 
 WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 
+ba_events list = ['smilodon','strongest barbarian','king wolf','power up','altar','mines','wolves','train','research','fire frost','clean up','runes','jungle','svs','immanuel','build']
 # CSV Based Dialog
   
   def chitchat(message)
@@ -28,6 +29,7 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
       
         wit_response = WIT_CLIENT.message(message)
         intent = wit_response['intents'][0]['name']
+        entity_keyword = wit_response['entities']['your_entity_name'][0]['value']
         response = getResponse(intent.downcase)
     
       if intent.nil?
@@ -37,7 +39,23 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
         
       else
         
+        if entity_keyword.nil?
+        
         response
+          
+        else
+          
+          if ba_events list.include? entity_keyword.downcase
+          
+            return entity_keyword
+          
+          else
+            
+            reponse
+          
+          end
+          
+        end  
         
       end
     

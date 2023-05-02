@@ -38,6 +38,13 @@ class PartnerList
         when 'dragoness' then displayname = 'Weeping Dragoness'
         when 'messenger' then displayname = 'Messenger of Destiny'
         when 'golk' then displayname = 'Titan Golk'
+        when 'syren' then displayname = 'Syren the Mermaid'
+        when 'sworddevil' then displayname = 'Sworddevil'
+        when 'voodoo' then displayname = 'Voodoo Specter'
+        when 'babur' then displayname = 'Babur the Tiger King'
+        when 'monk' then displayname = 'Monk Chadric'
+        when 'zither' then displayname = 'Zither Goddess'
+        when 'assassin' then displayname = 'Phantom Assassin'
         
     end
     
@@ -92,6 +99,13 @@ def Red_Partners()
                         when 'dragoness' then image_url = "https://i.imgur.com/MoUgZRU.png"
                         when 'messenger' then image_url ="https://i.imgur.com/IAumbDc.png"
                         when 'golk' then image_url ="https://i.imgur.com/fE6PGRA.png"
+                        when 'syren' then image_url = ""
+                        when 'sworddevil' then image_url = ""
+                        when 'voodoo' then image_url = ""
+                        when 'babur' then image_url = ""
+                        when 'monk' then image_url = ""
+                        when 'zither' then image_url = ""
+                        when 'assassin' then image_url = ""
                         
                         image_url
     end
@@ -126,6 +140,13 @@ def Green_Partners()
                         when 'dragoness' then image_url = "https://i.imgur.com/RX8SHWO.png"
                         when 'messenger' then image_url ="https://i.imgur.com/IcRcNHH.png"
                         when 'golk' then image_url ="https://i.imgur.com/faXVYQo.png"
+                        when 'syren' then image_url = ""
+                        when 'sworddevil' then image_url = ""
+                        when 'voodoo' then image_url = ""
+                        when 'babur' then image_url = ""
+                        when 'monk' then image_url = ""
+                        when 'zither' then image_url = ""
+                        when 'assassin' then image_url = ""
                         
                         image_url
     end
@@ -159,6 +180,13 @@ def Blue_Partners()
                         when 'dragoness' then image_url = "https://i.imgur.com/zkNs1s1.png"
                         when 'messenger' then image_url ="https://i.imgur.com/oTqdmDo.png"
                         when 'golk' then image_url ="https://i.imgur.com/dziSyJ1.png"
+                        when 'syren' then image_url = ""
+                        when 'sworddevil' then image_url = ""
+                        when 'voodoo' then image_url = ""
+                        when 'babur' then image_url = ""
+                        when 'monk' then image_url = ""
+                        when 'zither' then image_url = ""
+                        when 'assassin' then image_url = ""
                         
                         image_url
     end

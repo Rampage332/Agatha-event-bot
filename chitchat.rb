@@ -29,10 +29,8 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
         # response = WIT_CLIENT.message(user_message)
       
         wit_response = WIT_CLIENT.message(message)
-        puts wit_response
         intent = wit_response['intents'][0]['name']
         entity_keyword = wit_response['entities']['Brutal_Age_events:Brutal_Age_events'][0]['value']
-        puts entity_keyword
         response = getResponse(intent.downcase)
     
       if intent.nil?

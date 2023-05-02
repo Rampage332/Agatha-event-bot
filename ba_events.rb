@@ -34,14 +34,9 @@ class GetEvent
 
   def description
     
-    if @event.description.nil?
-      
-          @event.description = event_name
-    else
-      
-         @event.description.lines[3..].join.strip
-      
-    end
+        return event_name if @event.description.nil?
+        @event.description.lines[3..].join.strip
+    
   end
 
   def starts_on

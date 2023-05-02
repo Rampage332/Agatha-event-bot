@@ -55,7 +55,7 @@ class GetEvent
   private
 
   def fetch_event
-    events = @calendar.list_events(@calendar_id, max_results: 40, single_events: true, order_by: 'startTime', time_min: Time.now.iso8601)
-    events.items.find { |event| event.summary.downcase == @event_name.downcase }
+    events = @calendar.list_events(@calendar_id, max_results: 50, single_events: true, order_by: 'startTime', time_min: Time.now.iso8601)
+    events.items.find { |event| event.summary.downcase.include?(@event_name.downcase) }
   end
 end

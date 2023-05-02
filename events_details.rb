@@ -115,18 +115,16 @@ class Events
                \r\nAnother good way to get them is form **Wild Hunt** or hunting monsters, even during **Wolves** event you get runes every time you kill a wolf."
           
           when "jungle raid" then tip = "   "
-          when "svs - horde invasion" then tip = "Every other week, every two servers are matched up and battle over each other's temples. 
+          when "svs - horde invasion" then tip = "\r\nEvery other week, every two servers are matched up and battle over each other's temples. 
                The battle will last 24 hours. The result of this battle is determined by the number of temples captured (two temples available). If each server captures one temple, then the result is decided by temple occupation points. The more time the temple is occupied, the more points are gained. If temple occupation times are equal, then the battle is decided by the number of troops killed (sacrificial points).
-
                \r\nTips: 
-
-               \r\nMake sure you activate you shield when inactive or in need of protection. 
-               \r\nScouting & attacking will activate war frenzy for 15 minutes each time.
-               \r\nAvoid activating war frenzy if you require shielding
-               \r\nAvoid teleporting to enemy server if you don't have evasive manoeuvres
-               \r\nBefore getting into battle, make sure you activate your war gear-up: Runes, Flamens, boost items, talents .. 
-               \r\nAlways setup partners on defense
-               \r\nSome events are available on both sides of the servers, take advantage!"
+               \r\n1- Make sure you activate you shield when inactive or in need of protection. 
+               \r\n2- Scouting & attacking will activate war frenzy for 15 minutes each time.
+               \r\n3- Avoid activating war frenzy if you require shielding
+               \r\n4- Avoid teleporting to enemy server if you don't have evasive manoeuvres
+               \r\n5- Before getting into battle, make sure you activate your war gear-up: Runes, Flamens, boost items, talents .. 
+               \r\n6- Always setup partners on defense
+               \r\n7- Some events are available on both sides of the servers, take advantage!"
          
           when "imannuel's blessing" then tip = "   "
           when "fullspeed build" then tip = "For this event make sure you have your talents set to building, runes set to the most construction speed, I personally use **White Oak**.

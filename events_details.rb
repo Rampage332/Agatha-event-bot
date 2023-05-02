@@ -40,7 +40,7 @@ def eventsDetails
         
       def tips()
     
-        case @name
+        case @event
       
           when "hunting season" then tip = "    "
           when "adventure path" then tip = "    "

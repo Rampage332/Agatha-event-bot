@@ -64,7 +64,7 @@ events_list = ['hunting season','adventure path','smilodon attack','strongest ba
   
       event_lookup = "Brutal Age: " + respond
       # Brutal Age events function  ... 
-      ba_event = getEvent.new(event_lookup)
+      ba_event = GetEvent.new(event_lookup)
       event.channel.send_embed do |embed|
                     embed.colour = 0xFF4000
                     embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url:ba_event.thumbnail)

@@ -1,4 +1,5 @@
 require 'discordrb'
+require_relative 'events_details'
 require_relative 'partner_list'
 require_relative 'honor_list'
 require_relative 'chitchat'

@@ -11,6 +11,7 @@ require 'bundler'
 require 'wit'
 
 list_of_commands = ['comlist','help','honor','partner','✊','✌️','🖐','send_nudes','shush','shut','cigarette','coffee','coin','digging','burn','fusion','runes','relics','catfish','dolmen','moral','temple_titles','hall_of_war','totems','kill']
+events_list = ['smilodon','strongest barbarian','king wolf','power up','altar','mines','wolves','train','research','fire frost','clean up','runes','jungle','svs','immanuel','build']
 
 @agatha_bot = Discordrb::Commands::CommandBot.new(
   token: ENV["TOKEN"],
@@ -59,9 +60,19 @@ list_of_commands = ['comlist','help','honor','partner','✊','✌️','🖐','se
     respond = chitchat(umessage)
       end
     # Send the response back to the user
-    if respond = "BA_event"
-      
+    if events_list.include? respond
+  
       # Brutal Age events function  ... 
+      ba_event = getEvent.new
+      event.channel.send_embed do |embed|
+                    embed.colour = 0xFF4000
+                    embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url:ba_event.thumbnail)
+                    embed.author = Discordrb::Webhooks::EmbedAuthor.new(name: "Brutal Age Events")
+                    embed.title = ba_event.title
+                    embed.description = ba_event.description
+                    embed.add_field(name: 'Starts on', value: ba_event.start_time, inline: true)
+                    embed.add_field(name: "Time until", value: ba_event.time_left, inline: true)
+                    embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
       
     else 
        event.message.reply(respond)

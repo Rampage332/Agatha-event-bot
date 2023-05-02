@@ -30,7 +30,7 @@ events_list = ['hunting season','adventure path','smilodon attack','strongest ba
         wit_response = WIT_CLIENT.message(message)
         puts wit_response
         intent = wit_response['intents'][0]['name']
-        entity_keyword = wit_response['entities']['your_entity_name'][0]['value']
+        entity_keyword = wit_response['entities']['Brutal_Age_events'][0]['value']
         response = getResponse(intent.downcase)
     
       if intent.nil?

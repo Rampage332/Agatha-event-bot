@@ -7,10 +7,11 @@ require 'wit'
 
 WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 
-events_list = ['hunting season','adventure path','smilodon attack','strongest barbarian','king wolf','power up','altar','mine island contention','wolves plunder','fast training','research master','frostfire contention','clean up','whispering of runes','jungle raid','svs - horde invasion',"immanuel's blessing",'fullspeed build']
 # CSV Based Dialog
   
   def chitchat(message)
+    
+    events_list = ['hunting season','adventure path','smilodon attack','strongest barbarian','king wolf','power up','altar','mine island contention','wolves plunder','fast training','research master','frostfire contention','clean up','whispering of runes','jungle raid','svs - horde invasion',"immanuel's blessing",'fullspeed build']
     # Remove commas, periods, apostrophes, and question marks from the message
     user_message_stripped = message.gsub(/[,.?']/, '').downcase.strip
     arraycheck = 0

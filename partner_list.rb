@@ -100,12 +100,12 @@ def Red_Partners()
                         when 'messenger' then image_url ="https://i.imgur.com/IAumbDc.png"
                         when 'golk' then image_url ="https://i.imgur.com/fE6PGRA.png"
                         when 'syren' then image_url = "https://i.imgur.com/TbmZ72Z.png"
-                        when 'sworddevil' then image_url = ""
-                        when 'voodoo' then image_url = ""
-                        when 'babur' then image_url = ""
-                        when 'monk' then image_url = ""
-                        when 'zither' then image_url = ""
-                        when 'assassin' then image_url = ""
+                        when 'sworddevil' then image_url = "https://i.imgur.com/KVh49AG.png"
+                        when 'voodoo' then image_url = "https://i.imgur.com/jxgb8B1.png"
+                        when 'babur' then image_url = "https://i.imgur.com/pRfzUb3.png"
+                        when 'monk' then image_url = "https://i.imgur.com/4uLUw2v.png"
+                        when 'zither' then image_url = "https://i.imgur.com/PVa242m.png"
+                        when 'assassin' then image_url = "https://i.imgur.com/omcV1qN.png"
                         
                         image_url
     end

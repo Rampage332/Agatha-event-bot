@@ -141,12 +141,12 @@ def Green_Partners()
                         when 'messenger' then image_url ="https://i.imgur.com/IcRcNHH.png"
                         when 'golk' then image_url ="https://i.imgur.com/faXVYQo.png"
                         when 'syren' then image_url = "https://i.imgur.com/9h1NTAx.png"
-                        when 'sworddevil' then image_url = ""
-                        when 'voodoo' then image_url = ""
-                        when 'babur' then image_url = ""
-                        when 'monk' then image_url = ""
-                        when 'zither' then image_url = ""
-                        when 'assassin' then image_url = ""
+                        when 'sworddevil' then image_url = "https://i.imgur.com/nIpuf4k.png"
+                        when 'voodoo' then image_url = "https://i.imgur.com/pHRUWfo.png"
+                        when 'babur' then image_url = "https://i.imgur.com/Nf3AoS2.png"
+                        when 'monk' then image_url = "https://i.imgur.com/FVM62tT.png"
+                        when 'zither' then image_url = "https://i.imgur.com/NGBPX9I.png"
+                        when 'assassin' then image_url = "https://i.imgur.com/6azJzou.png"
                         
                         image_url
     end

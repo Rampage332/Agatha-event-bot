@@ -77,7 +77,7 @@ events_list = ['hunting season','adventure path','smilodon attack','strongest ba
                     embed.add_field(name: 'Starts on (UTC)', value: ba_event.starts_on, inline: true)
                     embed.add_field(name: "Time until", value: ba_event.time_left_tostart, inline: true)
                     embed.add_field(name: "Time to finish", value: ba_event.time_left_tofinish, inline: true)
-                    embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
+                    embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #596', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
       end
     else 
         
@@ -95,7 +95,7 @@ end
   event.user.pm.send_embed do |embed|
     embed.colour = 0xFF8000
     embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: 'https://i.imgur.com/pnTz7VH.png')
-    embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
+    embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #596', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
     embed.description ="
     You may mention @Agatha² or start your command with a question mark
     
@@ -156,7 +156,7 @@ end
   event.user.pm.send_embed do |embed|
     embed.colour = 0xFF8000
     embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: 'https://i.imgur.com/pnTz7VH.png')
-    embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
+    embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #596', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
     embed.description ="
     You may mention @Agatha² or start your command with a question mark
     
@@ -239,7 +239,7 @@ end
             event.channel.send_embed do |embed|
                 embed.colour = 0xFF8000
                 embed.title = "Honor Research Cost"
-                embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
+                embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #596', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
                 embed.description = "
                                 Available commands
                                 
@@ -338,7 +338,7 @@ end
                     embed.add_field(name: "**Stone Cost** <:stone:947154393424343060>", value: "#{honor_cost.Get_Stone_Cost()}", inline: true)
                     embed.add_field(name: '**Ivory Cost** <:ivory:947154393134932008>', value: "#{honor_cost.Get_Ivory_Cost()}", inline: true)
                     embed.add_field(name: "**Honor Marks Cost** <:marks:947154393319473182>", value: "#{honor_cost.Get_Honors_Cost()}", inline: true)
-                    embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
+                    embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #596', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
                 end
             
             elsif entrycheck == false
@@ -376,7 +376,7 @@ end
           event.channel.send_embed do |embed|
               embed.colour = 0xFF8000
               embed.title = "Availabe Partners List (Use Partner Name as Below)"
-              embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
+              embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #596', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
               embed.description = "
 
                 > 1- Colonel
@@ -444,7 +444,7 @@ end
         embed.colour = embedcolor
         embed.title = partner.Partner_Title()
         embed.image = Discordrb::Webhooks::EmbedImage.new(url:imageurl)
-        embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #349', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
+        embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #596, icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
     end
   
 

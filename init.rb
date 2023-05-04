@@ -445,7 +445,7 @@ end
         embed.colour = embedcolor
         embed.title = partner.Partner_Title()
         embed.image = Discordrb::Webhooks::EmbedImage.new(url:imageurl)
-        embed.description = "⚠️ Disclaimer: Guides are a collective effort of the BA community.""
+        embed.description = "⚠️ Disclaimer: Guides are a collective effort of the BA community."
         embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: "RAMPAGE #596", icon_url: "https://i.imgur.com/WQtvk5Z.jpg")
     end
   

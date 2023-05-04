@@ -447,7 +447,8 @@ end
         embed.image = Discordrb::Webhooks::EmbedImage.new(url:imageurl)
     end
     event.channel.send_embed do |embed|
-        embed.description = "⚠️ Disclaimer: Guides are a collective effort of the BA community"
+        embed.colour = embedcolor
+        embed.description = "⚠️ Guides are a collective effort of the BA community"
         embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: "RAMPAGE #596", icon_url: "https://i.imgur.com/WQtvk5Z.jpg")
     end
   

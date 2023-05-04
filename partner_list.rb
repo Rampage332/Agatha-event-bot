@@ -45,6 +45,7 @@ class PartnerList
         when 'monk' then displayname = 'Monk Chadric'
         when 'zither' then displayname = 'Zither Goddess'
         when 'assassin' then displayname = 'Phantom Assassin'
+        when 'yin' then displayname = 'Yin'
         
     end
     
@@ -106,6 +107,7 @@ def Red_Partners()
                         when 'monk' then image_url = "https://i.imgur.com/4uLUw2v.png"
                         when 'zither' then image_url = "https://i.imgur.com/PVa242m.png"
                         when 'assassin' then image_url = "https://i.imgur.com/omcV1qN.png"
+                        when 'yin' then image_url = "https://i.imgur.com/B4lwwgI.png"
                         
                         image_url
     end
@@ -147,6 +149,7 @@ def Green_Partners()
                         when 'monk' then image_url = "https://i.imgur.com/FVM62tT.png"
                         when 'zither' then image_url = "https://i.imgur.com/NGBPX9I.png"
                         when 'assassin' then image_url = "https://i.imgur.com/6azJzou.png"
+                        when 'yin' then image_url = "https://i.imgur.com/njw3thA.png"
                         
                         image_url
     end
@@ -187,6 +190,7 @@ def Blue_Partners()
                         when 'monk' then image_url = "https://i.imgur.com/4HAM4an.png"
                         when 'zither' then image_url = "https://i.imgur.com/LmnvEhI.png"
                         when 'assassin' then image_url = "https://i.imgur.com/GMvao5O.png"
+                        when 'yin' then image_url = "https://i.imgur.com/SqI5btv.png"
                         
                         image_url
     end

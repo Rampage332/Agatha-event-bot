@@ -445,7 +445,7 @@ end
         embed.colour = embedcolor
         embed.title = partner.Partner_Title()
         embed.image = Discordrb::Webhooks::EmbedImage.new(url:imageurl)
-        embed.add_field(name: '⚠️ Dislaimer', value: "These guides are a collective effort of the Brutal Age community.", inline: true)
+        embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: '⚠️ Dislaimer: Guides are a collective effort of the Brutal Age community.')
         embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #596', icon_url: "https://i.imgur.com/WQtvk5Z.jpg")
     end
   

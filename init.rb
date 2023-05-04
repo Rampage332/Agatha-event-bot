@@ -97,7 +97,7 @@ end
     embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: 'https://i.imgur.com/pnTz7VH.png')
     embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #596', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
     embed.description ="
-    You may mention @Agatha² or start your command with a question mark
+    You may mention @Agatha³ or start your command with a question mark
     
     > **comlist** or **help**
       Lists all commands.
@@ -125,8 +125,8 @@ end
     > **hall_of_war**: A guide on how many gems or skull piles you need to upgrade your hall of war
     
     > **digging**: Quick stats on how many eggs you get from diggers
-    > For Normal eggs use: @Agatha² digging normal
-    > For Rare eggs use: @Agatha² digging rare"
+    > For Normal eggs use: @Agatha³ digging normal
+    > For Rare eggs use: @Agatha³ digging rare"
     
     end
   event.user.pm.send_embed do |embed|
@@ -134,7 +134,7 @@ end
     embed.description ="
     > **burn [HP]**
     > Use this command so that Agatha tells you how many times you need to attack an outpost to completely burn
-    > Example: **@Agatha² burn 21000**
+    > Example: **@Agatha³ burn 21000**
     
     > **partner**
     
@@ -158,7 +158,7 @@ end
     embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: 'https://i.imgur.com/pnTz7VH.png')
     embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #596', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
     embed.description ="
-    You may mention @Agatha² or start your command with a question mark
+    You may mention @Agatha³ or start your command with a question mark
     
     > **comlist** or **help**
       Lists all commands.
@@ -195,19 +195,19 @@ end
     embed.description ="
     > **burn [HP]**
     > Use this command so that Agatha tells you how many times you need to attack an outpost to completely burn
-    > Example: **@Agatha² burn 21000**
+    > Example: **@Agatha³ burn 21000**
     
     > **partner**
     
     > Agatha will fetch the partner guide from an availble list of partners.
     > Try: @Agatha² partner list
     > This list is constantly being updated.
-    > **Example: @Agatha² partner Green Colonel**
+    > **Example: @Agatha³ partner Green Colonel**
     
     > **honor** (Beta)
     
     > Agatha will tell you the cost of each honor research
-    > Try: @Agatha² honor help
+    > Try: @Agatha³ honor help
     > High level costs will be updated once they are available
     "
   end
@@ -232,7 +232,7 @@ end
     honorlist = ['outpost','troop','shaman','beastmaster','warrior','agf','ap','champion','wyverness','sorceress']
     
     if honor[1].nil?
-        event.respond "Dear #{event.user.mention}, the correct command is @Agatha² honor __research name__ __tier__ __level__."
+        event.respond "Dear #{event.user.mention}, the correct command is @Agatha³ honor __research name__ __tier__ __level__."
     
     elsif honor[2].nil? && honor[1].downcase != 'outpost'
         if honor[1].downcase == 'help'
@@ -271,10 +271,10 @@ end
                                 > Wyverness
                                 > Sorceress
                                 
-                                Example: @Agatha²  honor Shaman def II 5
+                                Example: @Agatha³  honor Shaman def II 5
                                 "
                 end
-            else event.respond "Dear #{event.user.mention}, the correct command is @Agatha² honor __research name__ __tier__ __level__. \n > Use: @Agatha² honor help"
+            else event.respond "Dear #{event.user.mention}, the correct command is @Agatha³ honor __research name__ __tier__ __level__. \n > Use: @Agatha² honor help"
             end
         
         elsif honorlist.include? honor[1].downcase
@@ -342,12 +342,12 @@ end
                 end
             
             elsif entrycheck == false
-                event.respond "Dear #{event.user.mention}, the correct command is @Agatha² honor __research name__ __tier__ __level__. \n > Use: @Agatha² honor help"
+                event.respond "Dear #{event.user.mention}, the correct command is @Agatha³ honor __research name__ __tier__ __level__. \n > Use: @Agatha³ honor help"
             
             end
             
             else
-                event.respond "Dear #{event.user.mention}, the correct command is @Agatha² honor __research name__ __tier__ __level__. \n > Use: @Agatha² honor help"
+                event.respond "Dear #{event.user.mention}, the correct command is @Agatha³ honor __research name__ __tier__ __level__. \n > Use: @Agatha³ honor help"
         end
 
 end
@@ -368,7 +368,7 @@ end
   partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduchess','prince','ursa','bape','judge','chacha','woody','tusk','executor','mr.dagger','nomad','warmaiden','panda','tricky','medusa','marksman','ghost','scarecrow','thana','dragoness','messenger','golk','syren','sworddevil','voodoo','monk','babur','zither','assassin']
   
   if partner1[1].nil?
-      event.respond "Dear #{event.user.mention}, the correct command is @Agatha² partner __color__ __partner name__."
+      event.respond "Dear #{event.user.mention}, the correct command is @Agatha³ partner __color__ __partner name__."
   
   elsif partner1[2].nil?
       
@@ -419,7 +419,7 @@ end
             end
           
           else
-            event.respond "Dear #{event.user.mention}, the correct command is @Agatha² partner __color__ __partner name__."
+            event.respond "Dear #{event.user.mention}, the correct command is @Agatha³ partner __color__ __partner name__."
         end
         
   elsif partnerslist.include? partner1[2].downcase
@@ -437,13 +437,14 @@ end
                     embedcolor = 0x599159
                     imageurl = partner.Green_Partners()
                     
-            else event.respond "Dear #{event.user.mention}, you must choose a proper color (red, blue or green) followed by the partner name from the list \n _**Example**_: @Agatha² partner blue colonel"
+            else event.respond "Dear #{event.user.mention}, you must choose a proper color (red, blue or green) followed by the partner name from the list \n _**Example**_: @Agatha³ partner blue colonel"
         end
   
     event.channel.send_embed do |embed|
         embed.colour = embedcolor
         embed.title = partner.Partner_Title()
         embed.image = Discordrb::Webhooks::EmbedImage.new(url:imageurl)
+        embed.add_field(name: '⚠️ Dislaimer', value: "These guides are a collective effort of the Brutal Age community.", inline: true)
         embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #596, icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
     end
   
@@ -637,7 +638,7 @@ end
                 embed.image = Discordrb::Webhooks::EmbedImage.new(url: 'https://i.imgur.com/oWnSemP.jpg')
             end
     else
-    "Dear #{event.user.mention}, please select either rare or normal eggs. Ex: @Agatha² digging rare"
+    "Dear #{event.user.mention}, please select either rare or normal eggs. Ex: @Agatha³ digging rare"
     end
         
 end
@@ -675,13 +676,13 @@ end
     end
     
     if params[1].nil?
-        event.respond "#{event.user.mention}, say the magic word. @Agatha² coffee __please__ 💅"
+        event.respond "#{event.user.mention}, say the magic word. @Agatha³ coffee __please__ 💅"
         
     elsif params[1].downcase == "please" || params[1].downcase == "pls"
           event.respond "There you go #{event.user.mention}! ☕"
           
     elsif params[1].downcase != "please"
-            event.respond "#{event.user.mention}, say the magic word. @Agatha² coffee __please__ 💅"
+            event.respond "#{event.user.mention}, say the magic word. @Agatha³ coffee __please__ 💅"
     end
 end
 
@@ -703,13 +704,13 @@ end
     end
     
     if params[1].nil?
-        event.respond "#{event.user.mention}, say @Agatha² cigarette __please__ 💅"
+        event.respond "#{event.user.mention}, say @Agatha³ cigarette __please__ 💅"
         
     elsif params[1].downcase == "please" || params[1].downcase == "pls"
           event.respond "There you go #{event.user.mention}! Let me light it for you 🚬"
           
     elsif params[1].downcase != "please"
-            event.respond "#{event.user.mention}, say @Agatha² cigarette __please__ 💅"
+            event.respond "#{event.user.mention}, say @Agatha³ cigarette __please__ 💅"
     end
 end
 

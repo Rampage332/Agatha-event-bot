@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.5'
+ruby '3.2.2'
 
 gem 'discordrb'
 gem 'dotenv'
@@ -24,5 +24,4 @@ gem 'google-apis-youtube_v3', '~> 0.1'
 gem 'thor', '~> 1.0'
 gem 'os', '~> 0.9'
 gem 'rmail', '~> 1.1'
-gem 'dotenv'
 gem 'ruby-openai'

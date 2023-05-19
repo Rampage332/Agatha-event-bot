@@ -159,7 +159,7 @@ DEPENDENCIES
   wit
 
 RUBY VERSION
-   ruby 2.7.5
+   ruby 3.2.2p53
 
 BUNDLED WITH
    2.3.9

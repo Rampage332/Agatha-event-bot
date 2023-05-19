@@ -46,7 +46,7 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
       if intent.nil?
         # If no response is found, pass it to ChatGPT
         client = OpenAI::Client.new(access_token: ENV['OpenAI_API'])
-        response = client.chat(parameters: { model: "ext-ada-001", messages: [{ role: "user", content: message}]})
+        response = client.chat(parameters: { model: "text-ada-001", messages: [{ role: "user", content: message}]})
         
         response
         

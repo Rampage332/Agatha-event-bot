@@ -46,6 +46,7 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
     
       if intent.nil?
         # If no response is found, return a default message
+        # If no response is found, return a default message
         uri = URI('https://api.bardapi.dev/chat')
         http = Net::HTTP.new(uri.host, uri.port)
         http.use_ssl = true
@@ -53,11 +54,15 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
         data = { 'input' => message }
         request = Net::HTTP::Post.new(uri.path, headers)
         request.body = data.to_json
-        
+
         response = http.request(request)
+
+        puts "API response code: #{response.code}"
+        puts "API response body: #{response.body}"
+
         parsed_response = JSON.parse(response.body)
-        puts parsed_response
-        
+        puts "Parsed response: #{parsed_response.inspect}"
+
         parsed_response
         
       else

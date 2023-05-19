@@ -4,8 +4,7 @@ require 'pry'
 require 'dotenv/load'
 require 'csv'
 require 'wit'
-require 'net/http'
-require 'json'
+require 'ruby-openai'
 
 WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 
@@ -45,25 +44,11 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
         end
     
       if intent.nil?
-        # If no response is found, return a default message
-        # If no response is found, return a default message
-        uri = URI('https://api.bardapi.dev/chat')
-        http = Net::HTTP.new(uri.host, uri.port)
-        http.use_ssl = true
-        headers = { 'Authorization' => 'Bearer e1a68c4c-7649-4be8-8c87-0f8e4885f9f8', 'Content-Type' => 'application/json' }
-        data = { 'input' => message }
-        request = Net::HTTP::Post.new(uri.path, headers)
-        request.body = data.to_json
-
-        response = http.request(request)
-
-        puts "API response code: #{response.code}"
-        puts "API response body: #{response.body}"
-
-        parsed_response = JSON.parse(response.body)
-        puts "Parsed response: #{parsed_response.inspect}"
-
-        parsed_response
+        # If no response is found, pass it to ChatGPT
+        client = OpenAI::Client.new(api_key:'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')
+        response = client.chat(parameters: { model: "ada", messages: [{ role: "user", content: message}]})
+        
+        response
         
       else
         

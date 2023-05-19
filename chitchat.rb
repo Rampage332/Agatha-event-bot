@@ -36,7 +36,15 @@ headers = { 'Authorization' => 'Bearer e1a68c4c-7649-4be8-8c87-0f8e4885f9f8', 'C
         # response = WIT_CLIENT.message(user_message)
       
         wit_response = WIT_CLIENT.message(message)
-        intent = wit_response['intents'][0]['name']
+        
+        if wit_response.nil?
+          intent = nil
+        
+        else
+          
+         intent = wit_response['intents'][0]['name']
+          
+        end
       
         if intent == "BA_next_event_time"
             entity_keyword = wit_response['entities']['Brutal_Age_events:Brutal_Age_events'][0]['value']

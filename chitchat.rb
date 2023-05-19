@@ -4,7 +4,7 @@ require 'pry'
 require 'dotenv/load'
 require 'csv'
 require 'wit'
-require 'ruby-openai'
+require 'openai'
 
 WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 

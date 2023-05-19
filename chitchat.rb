@@ -4,8 +4,15 @@ require 'pry'
 require 'dotenv/load'
 require 'csv'
 require 'wit'
+require 'net/http'
+require 'json'
 
 WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
+
+uri = URI('https://api.bardapi.dev/chat')
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+headers = { 'Authorization' => 'Bearer e1a68c4c-7649-4be8-8c87-0f8e4885f9f8', 'Content-Type' => 'application/json' }
 
 # CSV Based Dialog
   
@@ -39,8 +46,14 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
     
       if intent.nil?
         # If no response is found, return a default message
+        data = { 'input' => message }
+        request = Net::HTTP::Post.new(uri.path, headers)
+        request.body = data.to_json
         
-        sorry
+        response = http.request(request)
+        parsed_response = JSON.parse(response.body)
+        
+        parsed_response
         
       else
         

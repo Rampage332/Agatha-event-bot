@@ -5,6 +5,7 @@ require 'dotenv/load'
 require 'csv'
 require 'wit'
 require 'openai'
+require 'ruby/openai'
 
 WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
 
@@ -46,13 +47,6 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
       if intent.nil?
         # If no response is found, pass it to ChatGPT
         client = OpenAI::Client.new(access_token: ENV['OPENAI_API'])
-
-          temperature = 0.9
-          max_tokens = 150
-          top_p = 1
-          frequency_penalty = 0.0
-          presence_penalty = 0.6
-          stop = [" Human:", " AI:"]
         
           response = client.completions(
             model: 'text-davinci-003',

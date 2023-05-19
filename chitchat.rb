@@ -31,7 +31,6 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
         # response = WIT_CLIENT.message(user_message)
       
         wit_response = WIT_CLIENT.message(message)
-        puts "wit_response: #{wit_response.inspect}"
         if wit_response.nil? || wit_response['intents'].empty?
           intent = nil
         
@@ -57,6 +56,7 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
         
         response = http.request(request)
         parsed_response = JSON.parse(response.body)
+        puts parsed_response
         
         parsed_response
         

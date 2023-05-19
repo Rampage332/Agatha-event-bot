@@ -37,7 +37,7 @@ headers = { 'Authorization' => 'Bearer e1a68c4c-7649-4be8-8c87-0f8e4885f9f8', 'C
       
         wit_response = WIT_CLIENT.message(message)
         
-        if wit_response['intents'].nil? || wit_response.nil?
+        if wit_response.nil? || wit_response['intents'].nil?
           intent = nil
         
         else 

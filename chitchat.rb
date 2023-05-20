@@ -1,4 +1,5 @@
 require_relative 'response'
+require_relative 'partners'
 require_relative 'openai'
 require 'active_support/all'
 require 'pry'
@@ -43,6 +44,11 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
             entity_keyword = wit_response['entities']['Brutal_Age_events:Brutal_Age_events'][0]['value']
           
             response = getResponse(intent.downcase)
+          
+        elsif intent == "Brutal_Age_Partners"
+        
+            response = getPartner(intent.downcase)
+            
         end
     
       if intent.nil?

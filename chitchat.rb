@@ -39,7 +39,7 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
         
         else 
          intent = wit_response['intents'][0]['name'] 
-         puts intent
+
         end
       
         if intent.nil?
@@ -76,6 +76,7 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
         elsif intent == "Brutal_Age_Partners"
           
            entity_keyword = wit_response['entities']['Brutal_Age_Partners:Brutal_Age_Partners'][0]['value']
+           puts entity_keyqord
           
           if entity_keyword.nil? 
             sorry

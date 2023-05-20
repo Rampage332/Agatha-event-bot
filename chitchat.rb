@@ -30,69 +30,69 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
   
     if dialogs_array.nil?
       # Send to Wit.ai for intent
-         #  response = "The message being passed to Wit.ai is: " + user_message
-        # response = WIT_CLIENT.message(user_message)
       
         wit_response = WIT_CLIENT.message(message)
+        puts wit_response
+      
         if wit_response.nil? || wit_response['intents'].empty?
           intent = nil
         
         else 
          intent = wit_response['intents'][0]['name'] 
+         puts intent
         end
       
-        if intent == "BA_next_event_time"
+        if intent.nil?
+            # If no response is found, pass it to ChatGPT
+            client = OpenAI::Client.new
+
+            response = client.completions(
+                parameters: {
+                model: "text-davinci-003",
+                prompt: message,
+                max_tokens: 250
+                })
+        
+            ai_response = response['choices'][0]['text']
+        
+            ai_response
+      
+        elsif intent == "BA_next_event_time"
             entity_keyword = wit_response['entities']['Brutal_Age_events:Brutal_Age_events'][0]['value']
           
-            response = getResponse(intent.downcase)
-          
-        elsif intent == "Brutal_Age_Partners"
-          entity_keyword = witresponse['entities']['Brutal_Age_Partners:Brutal_Age_Partners'][0]['value']
-            puts witresponse
-     
-          response = getResponse(intent.downcase)
-        end
-    
-      if intent.nil?
-        # If no response is found, pass it to ChatGPT
-        client = OpenAI::Client.new
-
-          response = client.completions(
-            parameters: {
-            model: "text-davinci-003",
-            prompt: message,
-            max_tokens: 250
-             })
-        
-        ai_response = response['choices'][0]['text']
-        
-        ai_response
-        
-      else
-        
-        if entity_keyword.nil?
-        
-        response
-          
-        else
-          
-          if events_list.include? entity_keyword.downcase
-          
-            return entity_keyword
+          if entity_keyword.nil?
             
-          elsif partnerslist.include? entity_keyword[1].downcase
+            sorry
             
-            return entity_keyword
-          
           else
-            
-            response
           
+            if events_list.include? entity_keyword.downcase
+          
+                return entity_keyword
+              
+            end
           end
           
-        end  
-        
-      end
+        elsif intent == "Brutal_Age_Partners"
+          
+          entity_keyword = witresponse['entities']['Brutal_Age_Partners:Brutal_Age_Partners'][0]['value']
+          
+          if entity_keyword.nil? 
+            sorry
+            
+          else
+            if partnerslist.include? entity_keyword[1].downcase
+            
+              return entity_keyword
+            
+            end
+          end
+            
+        else
+          
+          response = getResponse(intent.downcase)
+          
+        end
     
     else
       # If a response is found, return it

@@ -63,7 +63,9 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
     wit_partner = respond.split(' ')
     end
     # Send the response back to the user
-     
+   puts "respond: #{respond}"
+   puts "wit_partner: #{wit_partner}"
+
    if events_list.include? respond
   
       # Brutal Age events function  ... 
@@ -81,7 +83,7 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
                     embed.add_field(name: "Time to finish", value: ba_event.time_left_tofinish, inline: true)
                     embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #596', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
       end
-    
+      
       elsif partnerslist.include? wit_partner[1]
       
         partner2 = PartnerList.new(wit_partner[0].downcase,wit_partner[1].downcase)

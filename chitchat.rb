@@ -49,14 +49,11 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
         client = OpenAI::Client.new(access_token: ENV['OPENAI_API'])
         
           response = client.completions(
-            model: 'text-davinci-003',
+            engine: 'text-davinci-003',
+            parameters: {
             prompt: message,
-            temperature: temperature,
-            max_tokens: max_tokens,
-            top_p: top_p,
-            frequency_penalty: frequency_penalty,
-            presence_penalty: presence_penalty,
-            stop: stop
+            temperature: 0.9,
+            max_tokens: 150}
             )
         
         response

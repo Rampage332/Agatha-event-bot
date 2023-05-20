@@ -15,6 +15,8 @@ require 'wit'
 list_of_commands = ['comlist','help','honor','partner','✊','✌️','🖐','send_nudes','shush','shut','cigarette','coffee','coin','digging','burn','fusion','runes','relics','catfish','dolmen','moral','temple_titles','hall_of_war','totems','kill']
 events_list = ['hunting season','adventure path','smilodon attack','strongest barbarian','king wolf','power up','altar','mine island contention','wolves plunder','fast training','research master','frostfire contention','clean up','whispering of runes','jungle raid','svs - horde invasion',"immanuel's blessing",'fullspeed build']
 partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduchess','prince','ursa','bape','judge','chacha','woody','tusk','executor','mr.dagger','nomad','warmaiden','panda','tricky','medusa','marksman','ghost','scarecrow','thana','dragoness','messenger','golk','syren','sworddevil','voodoo','monk','babur','zither','assassin','yin','elf']
+command_flag = true
+wit_partner = ['place','holder']
 
 @agatha_bot = Discordrb::Commands::CommandBot.new(
   token: ENV["TOKEN"],
@@ -41,6 +43,7 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
     # Chuck norris function
     if event.message.content.downcase.include? ("norris")
       event.message.reply("Did someone say Chuck Norris? \n" + get_chuck_norris_fact())
+      command_flag = false
       
     elsif event.message.content.downcase.include? ("meme")
       
@@ -55,6 +58,8 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
           embed.title = name
           embed.image = Discordrb::Webhooks::EmbedImage.new(url: meme_url)
         end
+      
+        command_flag = false
     
     else
     # Call the chitchat function to generate a response
@@ -66,7 +71,7 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
    puts "respond: #{respond}"
    puts "wit_partner: #{wit_partner}"
 
-   if events_list.include? respond
+   if events_list.include? respond || command_flag
   
       # Brutal Age events function  ... 
       
@@ -84,7 +89,7 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
                     embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #596', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
       end
       
-      elsif partnerslist.include? wit_partner[1]
+      elsif partnerslist.include? wit_partner[1] || command_flag
       
         partner2 = PartnerList.new(wit_partner[0].downcase,wit_partner[1].downcase)
       

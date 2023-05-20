@@ -32,7 +32,6 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
       # Send to Wit.ai for intent
       
         wit_response = WIT_CLIENT.message(message)
-        puts wit_response
      
         if wit_response.nil? || wit_response['intents'].empty?
           intent = nil

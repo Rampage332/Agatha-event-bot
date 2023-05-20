@@ -86,7 +86,7 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
       
       partner2 = PartnerList.new(wit_partner[0].downcase,wit_partner[1].downcase)
       
-      puts "the color is:" + respond[0]
+      puts "the color is:" + wit_partner[0]
       case respond[0].downcase
             when 'red' then
                     embedcolor = 0xB76357

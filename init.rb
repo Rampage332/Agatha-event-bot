@@ -41,7 +41,6 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
     # Chuck norris function
     if event.message.content.downcase.include? ("norris")
       event.message.reply("Did someone say Chuck Norris? \n" + get_chuck_norris_fact())
-      response_flag = true
       
     elsif event.message.content.downcase.include? ("meme")
       
@@ -51,7 +50,6 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
             data = json[0]['data']['children'][0]['data']
             name = data['title']
             meme_url = data['url']
-          response_flag = true
       
         event.channel.send_embed do |embed|
           embed.title = name
@@ -65,11 +63,8 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
     wit_partner = respond.split(' ')
     end
     # Send the response back to the user
-    if response_flag
-      
-      event.message.reply(respond)
-      
-    elsif events_list.include? respond
+     
+   if events_list.include? respond
   
       # Brutal Age events function  ... 
       

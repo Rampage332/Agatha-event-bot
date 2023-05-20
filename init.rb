@@ -65,9 +65,6 @@ wit_partner = ['place','holder']
         wit_partner = respond.split(' ')
       
         # Send the response back to the user
-        puts "respond: #{respond}"
-        puts "wit_partner: #{wit_partner}"
-
         if events_list.include? respond || command_flag
   
           # Brutal Age events function  ... 

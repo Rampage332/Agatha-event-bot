@@ -33,6 +33,8 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
       
         wit_response = WIT_CLIENT.message(message)
         puts wit_response
+        puts witresponse['entities']['Brutal_Age_Partners:Brutal_Age_Partners'][0]['value']
+        
       
         if wit_response.nil? || wit_response['intents'].empty?
           intent = nil

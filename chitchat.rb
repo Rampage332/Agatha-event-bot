@@ -15,6 +15,8 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
   def chitchat(message)
     
     events_list = ['hunting season','adventure path','smilodon attack','strongest barbarian','king wolf','power up','altar','mine island contention','wolves plunder','fast training','research master','frostfire contention','clean up','whispering of runes','jungle raid','svs - horde invasion',"immanuel's blessing",'fullspeed build']
+    partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduchess','prince','ursa','bape','judge','chacha','woody','tusk','executor','mr.dagger','nomad','warmaiden','panda','tricky','medusa','marksman','ghost','scarecrow','thana','dragoness','messenger','golk','syren','sworddevil','voodoo','monk','babur','zither','assassin','yin','elf']
+
     # Remove commas, periods, apostrophes, and question marks from the message
     user_message_stripped = message.gsub(/[,.?']/, '').downcase.strip
     arraycheck = 0
@@ -71,6 +73,10 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
           
           if events_list.include? entity_keyword.downcase
           
+            return entity_keyword
+            
+          elsif partnerslist.include? entity_keyword[1].downcase
+            
             return entity_keyword
           
           else

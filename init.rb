@@ -43,7 +43,6 @@ wit_partner = ['place','holder']
     # Chuck norris function
     if event.message.content.downcase.include? ("norris")
       event.message.reply("Did someone say Chuck Norris? \n" + get_chuck_norris_fact())
-      command_flag = false
       
     elsif event.message.content.downcase.include? ("meme")
       
@@ -58,26 +57,24 @@ wit_partner = ['place','holder']
           embed.title = name
           embed.image = Discordrb::Webhooks::EmbedImage.new(url: meme_url)
         end
-      
-        command_flag = false
-    
+     
     else
-    # Call the chitchat function to generate a response
-    umessage = event.message.content.split.drop(1).join(' ')
-    respond = chitchat(umessage).downcase
-    wit_partner = respond.split(' ')
-    end
-    # Send the response back to the user
-   puts "respond: #{respond}"
-   puts "wit_partner: #{wit_partner}"
-
-   if events_list.include? respond || command_flag
-  
-      # Brutal Age events function  ... 
+        # Call the chitchat function to generate a response
+        umessage = event.message.content.split.drop(1).join(' ')
+        respond = chitchat(umessage).downcase
+        wit_partner = respond.split(' ')
       
-      ba_event_detail = Events.new(respond)
-      ba_event = GetEvent.new(respond)
-      event.channel.send_embed do |embed|
+        # Send the response back to the user
+        puts "respond: #{respond}"
+        puts "wit_partner: #{wit_partner}"
+
+        if events_list.include? respond || command_flag
+  
+          # Brutal Age events function  ... 
+      
+          ba_event_detail = Events.new(respond)
+          ba_event = GetEvent.new(respond)
+          event.channel.send_embed do |embed|
                     embed.colour = 0xFF4000
                     embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url:ba_event_detail.thumbnail)
                     embed.author = Discordrb::Webhooks::EmbedAuthor.new(name: "Brutal Age Events")
@@ -87,13 +84,13 @@ wit_partner = ['place','holder']
                     embed.add_field(name: "Time until", value: ba_event.time_left_tostart, inline: true)
                     embed.add_field(name: "Time to finish", value: ba_event.time_left_tofinish, inline: true)
                     embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #596', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
-      end
+          end
       
-      elsif partnerslist.include? wit_partner[1] || command_flag
+        elsif partnerslist.include? wit_partner[1] || command_flag
       
-        partner2 = PartnerList.new(wit_partner[0].downcase,wit_partner[1].downcase)
+          partner2 = PartnerList.new(wit_partner[0].downcase,wit_partner[1].downcase)
       
-        case wit_partner[0].downcase
+          case wit_partner[0].downcase
             when 'red' then
                     embedcolor = 0xB76357
                     imageurl = partner2.Red_Partners()
@@ -105,21 +102,19 @@ wit_partner = ['place','holder']
                     imageurl = partner2.Green_Partners()
                     
             else event.respond "Dear #{event.user.mention}, I'm having trouble identifying the color of the partner you are inquiring about."
-        end
+          end
               
-      event.channel.send_embed do |embed|
-        embed.colour = embedcolor
-        embed.title = partner2.Partner_Title()
-        embed.image = Discordrb::Webhooks::EmbedImage.new(url:imageurl)
-        embed.description = "⚠️ Guides are a collective effort of the BA community"
-        embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: "RAMPAGE #596", icon_url: "https://i.imgur.com/WQtvk5Z.jpg")
-      end
+          event.channel.send_embed do |embed|
+            embed.colour = embedcolor
+            embed.title = partner2.Partner_Title()
+            embed.image = Discordrb::Webhooks::EmbedImage.new(url:imageurl)
+            embed.description = "⚠️ Guides are a collective effort of the BA community"
+            embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: "RAMPAGE #596", icon_url: "https://i.imgur.com/WQtvk5Z.jpg")
+          end
     
-    else 
-        
-       event.message.reply(respond)
-    end
-    
+        else 
+          event.message.reply(respond)
+        end
   end
 end
 

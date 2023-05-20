@@ -39,7 +39,7 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
   if event.message.mentions.include?(@agatha_bot.profile) && is_command
     
     # Chuck norris function
-    if event.message.content.downcase.include? ("chuck norris")
+    if event.message.content.downcase.include? ("norris")
       respond = "Did someone say Chuck Norris? \n" + get_chuck_norris_fact()
       
     elsif event.message.content.downcase.include? ("meme")
@@ -65,7 +65,11 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
     wit_partner = respond.split(' ')
     end
     # Send the response back to the user
-    if events_list.include? respond
+    if respond.nil?
+      
+      event.message.reply("I'm sorry, I don't understand what you mean")
+    
+    elsif events_list.include? respond
   
       # Brutal Age events function  ... 
       

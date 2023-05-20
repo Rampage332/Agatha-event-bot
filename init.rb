@@ -61,15 +61,11 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
     # Call the chitchat function to generate a response
     umessage = event.message.content.split.drop(1).join(' ')
     respond = chitchat(umessage).downcase
-    wit_partner = ['text','text']
     wit_partner = respond.split(' ')
     end
     # Send the response back to the user
-    if respond.nil?
-      
-      event.message.reply("I'm sorry, I don't understand what you mean")
-    
-    elsif events_list.include? respond
+   
+    if events_list.include? respond
   
       # Brutal Age events function  ... 
       

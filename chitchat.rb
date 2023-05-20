@@ -76,13 +76,13 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
         elsif intent == "BA_Partner_setup"
           
            entity_keyword = wit_response['entities']['Brutal_Age_Partners:Brutal_Age_Partners'][0]['value']
-          
+           partner_details = entity_keyword.split(' ')
           if entity_keyword.nil? 
 
             sorry
             
           else
-            if partnerslist.include? entity_keyword[1].downcase
+            if partnerslist.include? partner_details[1].downcase
             
               puts "Entity Keyword:" + entity_keyword
               return entity_keyword

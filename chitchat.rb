@@ -55,7 +55,9 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
             max_tokens: 250
              })
         
-        response
+        ai_response = response['choices'][0]['text']
+        
+        ai_response
         
       else
         

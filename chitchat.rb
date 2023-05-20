@@ -84,7 +84,6 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
           else
             if partnerslist.include? partner_details[1].downcase
             
-              puts "Entity Keyword:" + entity_keyword
               return entity_keyword
             
             end

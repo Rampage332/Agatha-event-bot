@@ -115,9 +115,9 @@ wit_partner = ['place','holder']
         else 
           event.message.reply(respond)
         end
+    end
   end
 end
-
 #========================================================================================
 
 #Main menu (Help & Comlist) Functions

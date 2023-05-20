@@ -58,7 +58,7 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
             ai_response
       
         elsif intent == "BA_next_event_time"
-            entity_keyword = wit_response['entities']['Brutal_Age_events:Brutal_Age_events'][0]['body']
+            entity_keyword = wit_response['entities']['Brutal_Age_events:Brutal_Age_events'][0]['value']
           
           if entity_keyword.nil?
             

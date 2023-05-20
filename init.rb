@@ -28,19 +28,19 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
 #========================================================================================
 
 @agatha_bot.mention do |event|
-  is_command = true
+  not_command = true
 
   command_check = event.message.content.split(' ')
   if list_of_commands.include? command_check[1].downcase
-    is_command = false
+    not_command = false
   end
 
   # Check if the bot is mentioned and no command is presented
-  if event.message.mentions.include?(@agatha_bot.profile) && is_command
+  if event.message.mentions.include?(@agatha_bot.profile) && not_command
     
     # Chuck norris function
     if event.message.content.downcase.include? ("norris")
-      respond = "Did someone say Chuck Norris? \n" + get_chuck_norris_fact()
+      event.message.reply("Did someone say Chuck Norris? \n" + get_chuck_norris_fact())
       
     elsif event.message.content.downcase.include? ("meme")
       

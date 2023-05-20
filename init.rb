@@ -61,7 +61,7 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
     # Call the chitchat function to generate a response
     umessage = event.message.content.split.drop(1).join(' ')
     respond = chitchat(umessage).downcase
-    puts respond
+    wit_partner = {'text','text'}
     wit_partner = respond.split(' ')
     end
     # Send the response back to the user
@@ -87,11 +87,11 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
                     embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #596', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
       end
     
-    elsif partnerslist.include? wit_partner[1]
+      elsif partnerslist.include? wit_partner[1]
       
-      partner2 = PartnerList.new(wit_partner[0].downcase,wit_partner[1].downcase)
+        partner2 = PartnerList.new(wit_partner[0].downcase,wit_partner[1].downcase)
       
-      case wit_partner[0].downcase
+        case wit_partner[0].downcase
             when 'red' then
                     embedcolor = 0xB76357
                     imageurl = partner2.Red_Partners()

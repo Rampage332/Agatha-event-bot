@@ -1,4 +1,5 @@
 require_relative 'response'
+require_relative 'openai'
 require 'active_support/all'
 require 'pry'
 require 'dotenv/load'
@@ -46,7 +47,7 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
     
       if intent.nil?
         # If no response is found, pass it to ChatGPT
-        client = OpenAI::Client.new(access_token: ENV['OPENAI_API'])
+        client = OpenAI::Client.new
 
           response = client.completions(
             parameters: {

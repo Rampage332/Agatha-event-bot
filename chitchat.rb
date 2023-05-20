@@ -1,5 +1,4 @@
 require_relative 'response'
-require_relative 'partners'
 require_relative 'openai'
 require 'active_support/all'
 require 'pry'

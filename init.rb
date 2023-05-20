@@ -61,6 +61,7 @@ partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduche
     # Call the chitchat function to generate a response
     umessage = event.message.content.split.drop(1).join(' ')
     respond = chitchat(umessage).downcase
+    puts respond
     wit_partner = respond.split(' ')
     end
     # Send the response back to the user

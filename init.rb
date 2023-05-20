@@ -14,6 +14,7 @@ require 'wit'
 
 list_of_commands = ['comlist','help','honor','partner','✊','✌️','🖐','send_nudes','shush','shut','cigarette','coffee','coin','digging','burn','fusion','runes','relics','catfish','dolmen','moral','temple_titles','hall_of_war','totems','kill']
 events_list = ['hunting season','adventure path','smilodon attack','strongest barbarian','king wolf','power up','altar','mine island contention','wolves plunder','fast training','research master','frostfire contention','clean up','whispering of runes','jungle raid','svs - horde invasion',"immanuel's blessing",'fullspeed build']
+partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduchess','prince','ursa','bape','judge','chacha','woody','tusk','executor','mr.dagger','nomad','warmaiden','panda','tricky','medusa','marksman','ghost','scarecrow','thana','dragoness','messenger','golk','syren','sworddevil','voodoo','monk','babur','zither','assassin','yin','elf']
 
 @agatha_bot = Discordrb::Commands::CommandBot.new(
   token: ENV["TOKEN"],
@@ -79,6 +80,33 @@ events_list = ['hunting season','adventure path','smilodon attack','strongest ba
                     embed.add_field(name: "Time to finish", value: ba_event.time_left_tofinish, inline: true)
                     embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #596', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
       end
+    
+    elsif partnerslist.include? respond[1]
+      
+      partner2 = PartnerList.new(respond[0].downcase,respond[1].downcase)
+      
+      case respond[0].downcase
+            when 'red' then
+                    embedcolor = 0xB76357
+                    imageurl = partner2.Red_Partners()
+            when 'blue' then
+                    embedcolor = 0x577DB7
+                    imageurl = partner2.Blue_Partners()
+            when 'green' then
+                    embedcolor = 0x599159
+                    imageurl = partner2.Green_Partners()
+                    
+            else event.respond "Dear #{event.user.mention}, I'm having trouble identifying the color of the partner you are inquiring about."
+        end
+              
+      event.channel.send_embed do |embed|
+        embed.colour = embedcolor
+        embed.title = partner2.Partner_Title()
+        embed.image = Discordrb::Webhooks::EmbedImage.new(url:imageurl)
+        embed.description = "⚠️ Guides are a collective effort of the BA community"
+        embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: "RAMPAGE #596", icon_url: "https://i.imgur.com/WQtvk5Z.jpg")
+      end
+    
     else 
         
        event.message.reply(respond)
@@ -364,8 +392,6 @@ end
       partner1[1] = partner1[2]
       partner1[2] = partner1[3]
   end
-  
-  partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduchess','prince','ursa','bape','judge','chacha','woody','tusk','executor','mr.dagger','nomad','warmaiden','panda','tricky','medusa','marksman','ghost','scarecrow','thana','dragoness','messenger','golk','syren','sworddevil','voodoo','monk','babur','zither','assassin','yin','elf']
   
   if partner1[1].nil?
       event.respond "Dear #{event.user.mention}, the correct command is @Agatha³ partner __color__ __partner name__."

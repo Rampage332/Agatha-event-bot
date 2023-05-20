@@ -47,14 +47,13 @@ WIT_CLIENT = Wit.new(access_token: ENV['WIT_TOKEN'])
       if intent.nil?
         # If no response is found, pass it to ChatGPT
         client = OpenAI::Client.new(access_token: ENV['OPENAI_API'])
-        
+
           response = client.completions(
-            engine: 'text-davinci-003',
             parameters: {
+            model: "text-davinci-003",
             prompt: message,
-            temperature: 0.9,
-            max_tokens: 150}
-            )
+            max_tokens: 250
+             })
         
         response
         

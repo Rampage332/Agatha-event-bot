@@ -165,6 +165,10 @@ def getResponse(intent)
     when 'joke' then return get_joke
       
     #==============================================
+    
+    when 'norris' then return get_chuck_norris_fact
+    
+    #==============================================
         
   else return "I'm sorry, I didn't quite understand"
         

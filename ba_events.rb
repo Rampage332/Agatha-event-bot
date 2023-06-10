@@ -7,7 +7,7 @@ class GetEvent
     service = Google::Apis::CalendarV3::CalendarService.new
     service.key = 'AIzaSyDiEL4wGEJJn84x_RxroUj92XtHhbEKTFI'
     @calendar_id = 'rr5boutm86vn02o0dsrkjui4og@group.calendar.google.com'
-    @event = service.list_events(@calendar_id, max_results: 200, single_events: true, order_by: 'startTime', time_min: Time.now.iso8601).items.detect { |event| event.summary.downcase.include?(event_name) }
+    @event = service.list_events(@calendar_id, max_results: 100, single_events: true, order_by: 'startTime', time_min: Time.now.iso8601).items.detect { |event| event.summary.downcase.include?(event_name) }
     @start_time = Time.parse(@event.start.date_time.strftime('%Y-%m-%dT%H:%M:%S%z'))
     @end_time = Time.parse(@event.end.date_time.strftime('%Y-%m-%dT%H:%M:%S%z'))
 

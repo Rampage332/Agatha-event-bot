@@ -47,6 +47,7 @@ class PartnerList
         when 'assassin' then displayname = 'Phantom Assassin'
         when 'yin' then displayname = 'Yin'
         when 'elf' then displayname = 'Elven Prince'
+        when 'leviathan' then displayname = 'Leviathan'
         
     end
     
@@ -110,6 +111,7 @@ def Red_Partners()
                         when 'assassin' then image_url = "https://i.imgur.com/omcV1qN.png"
                         when 'yin' then image_url = "https://i.imgur.com/B4lwwgI.png"
                         when 'elf' then image_url = "https://i.imgur.com/n419dVf.png"
+                        when 'leviathan' then image_url = "https://i.imgur.com/LyVjhCA.png"
                         
                         image_url
     end
@@ -153,6 +155,7 @@ def Green_Partners()
                         when 'assassin' then image_url = "https://i.imgur.com/6azJzou.png"
                         when 'yin' then image_url = "https://i.imgur.com/njw3thA.png"
                         when 'elf' then image_url = "https://i.imgur.com/jcYzh9j.png"
+                        when 'leviathan' then image_url = "https://i.imgur.com/gXQwxbN.png"
                         
                         
                         image_url
@@ -196,6 +199,7 @@ def Blue_Partners()
                         when 'assassin' then image_url = "https://i.imgur.com/GMvao5O.png"
                         when 'yin' then image_url = "https://i.imgur.com/SqI5btv.png"
                         when 'elf' then image_url = "https://i.imgur.com/ZQui7HR.png"
+                        when 'leviathan' then image_url = "https://i.imgur.com/lW4U2bL.png"
                           
                         image_url
     end

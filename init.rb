@@ -14,7 +14,7 @@ require 'wit'
 
 list_of_commands = ['comlist','help','honor','partner','✊','✌️','🖐','send_nudes','shush','shut','cigarette','coffee','coin','digging','burn','fusion','runes','relics','catfish','dolmen','moral','temple_titles','hall_of_war','totems','kill']
 events_list = ['hunting season','adventure path','smilodon attack','strongest barbarian','king wolf','power up','altar','mine island contention','wolves plunder','fast training','research master','frostfire contention','clean up','whispering of runes','jungle raid','svs - horde invasion',"immanuel's blessing",'fullspeed build']
-partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduchess','prince','ursa','bape','judge','chacha','woody','tusk','executor','mr.dagger','nomad','warmaiden','panda','tricky','medusa','marksman','ghost','scarecrow','thana','dragoness','messenger','golk','syren','sworddevil','voodoo','monk','babur','zither','assassin','yin','elf','leviathan']
+partnerslist = ['colonel','rockwell','valkyrie','prophet','marionette','isyduchess','prince','ursa','bape','judge','chacha','woody','tusk','executor','mr.dagger','nomad','warmaiden','panda','tricky','medusa','marksman','ghost','scarecrow','thana','dragoness','messenger','golk','syren','sworddevil','voodoo','monk','babur','zither','assassin','yin','elf','leviathan','gladiator','necro']
 command_flag = true
 wit_partner = ['place','holder']
 
@@ -442,6 +442,8 @@ end
                 > 35- Yin
                 > 36- Elf
                 > 37- Leviathan
+                > 38- Gladiator
+                > 39- Necro
 
                 Example: @Agatha² partner Blue Rockwell
                 "

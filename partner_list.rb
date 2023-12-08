@@ -48,6 +48,9 @@ class PartnerList
         when 'yin' then displayname = 'Yin'
         when 'elf' then displayname = 'Elven Prince'
         when 'leviathan' then displayname = 'Leviathan'
+        when 'gladiator' then displayname = 'Dragon Gladiator'
+        when 'necro' then displayname = 'Princess Necro'
+      
         
     end
     
@@ -112,7 +115,8 @@ def Red_Partners()
                         when 'yin' then image_url = "https://i.imgur.com/B4lwwgI.png"
                         when 'elf' then image_url = "https://i.imgur.com/n419dVf.png"
                         when 'leviathan' then image_url = "https://i.imgur.com/LyVjhCA.png"
-                        
+                        when 'glaadiator' then image_url = "https://i.imgur.com/fyNIY0l.png"
+                        when 'necro' then image_url = "https://i.imgur.com/nzytGUD.png"
                         image_url
     end
     
@@ -156,6 +160,8 @@ def Green_Partners()
                         when 'yin' then image_url = "https://i.imgur.com/njw3thA.png"
                         when 'elf' then image_url = "https://i.imgur.com/jcYzh9j.png"
                         when 'leviathan' then image_url = "https://i.imgur.com/gXQwxbN.png"
+                        when 'glaadiator' then image_url = "https://i.imgur.com/C6gev3Z.png"
+                        when 'necro' then image_url = "https://i.imgur.com/k5u06dJ.png"
                         
                         
                         image_url
@@ -200,6 +206,8 @@ def Blue_Partners()
                         when 'yin' then image_url = "https://i.imgur.com/SqI5btv.png"
                         when 'elf' then image_url = "https://i.imgur.com/ZQui7HR.png"
                         when 'leviathan' then image_url = "https://i.imgur.com/lW4U2bL.png"
+                        when 'glaadiator' then image_url = "https://i.imgur.com/q1EvfGN.png"
+                        when 'necro' then image_url = "https://i.imgur.com/ogZvGHw.png"
                           
                         image_url
     end

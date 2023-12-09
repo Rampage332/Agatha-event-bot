@@ -115,7 +115,7 @@ def Red_Partners()
                         when 'yin' then image_url = "https://i.imgur.com/B4lwwgI.png"
                         when 'elf' then image_url = "https://i.imgur.com/n419dVf.png"
                         when 'leviathan' then image_url = "https://i.imgur.com/LyVjhCA.png"
-                        when 'glaadiator' then image_url = "https://i.imgur.com/fyNIY0l.png"
+                        when 'gladiator' then image_url = "https://i.imgur.com/fyNIY0l.png"
                         when 'necro' then image_url = "https://i.imgur.com/nzytGUD.png"
                         image_url
     end
@@ -160,7 +160,7 @@ def Green_Partners()
                         when 'yin' then image_url = "https://i.imgur.com/njw3thA.png"
                         when 'elf' then image_url = "https://i.imgur.com/jcYzh9j.png"
                         when 'leviathan' then image_url = "https://i.imgur.com/gXQwxbN.png"
-                        when 'glaadiator' then image_url = "https://i.imgur.com/C6gev3Z.png"
+                        when 'gladiator' then image_url = "https://i.imgur.com/C6gev3Z.png"
                         when 'necro' then image_url = "https://i.imgur.com/k5u06dJ.png"
                         
                         
@@ -206,7 +206,7 @@ def Blue_Partners()
                         when 'yin' then image_url = "https://i.imgur.com/SqI5btv.png"
                         when 'elf' then image_url = "https://i.imgur.com/ZQui7HR.png"
                         when 'leviathan' then image_url = "https://i.imgur.com/lW4U2bL.png"
-                        when 'glaadiator' then image_url = "https://i.imgur.com/q1EvfGN.png"
+                        when 'gladiator' then image_url = "https://i.imgur.com/q1EvfGN.png"
                         when 'necro' then image_url = "https://i.imgur.com/ogZvGHw.png"
                           
                         image_url

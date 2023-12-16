@@ -383,8 +383,112 @@ end
 #==========================================================================================
 
 #Partners Guide Function
+@agatha_bot.command(:partner) do |event|
+  partner1 = event.message.content.split(' ')
+  
+  if partner1[0] == "<@!740929277318398003>" || partner1[0] == "<@740929277318398003>"
+      partner1[0] = partner1[1]
+      partner1[1] = partner1[2]
+      partner1[2] = partner1[3]
+  end
+  
+  if partner1[1].nil?
+      event.respond "Dear #{event.user.mention}, the correct command is @Agatha³ partner __color__ __partner name__."
+  
+  elsif partner1[2].nil?
+      
+      if partner1[1].downcase == 'list'
+          event.channel.send_embed do |embed|
+              embed.colour = 0xFF8000
+              embed.title = "Availabe Partners List (Use Partner Name as Below)"
+              embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: 'RAMPAGE #289', icon_url: 'https://i.imgur.com/WQtvk5Z.jpg')
+              embed.description = "
 
-@agatha_bot.command(/^(partner|partners)$/i) do |event|
+                > 1- Colonel
+                > 2- Rockwell
+                > 3- Valkyrie
+                > 4- Prophet
+                > 5- Marionette
+                > 6- Isyduchess
+                > 7- Prince
+                > 8- Ursa
+                > 9- Bape
+                > 10- Judge
+                > 11- Chacha
+                > 12- Woody
+                > 13- Tusk
+                > 14- Executor
+                > 15- Mr.Dagger
+                > 16- Nomad
+                > 17- Warmaiden
+                > 18- Panda
+                > 19- Tricky
+                > 20- Medusa
+                > 21- Red Marksman
+                > 22- Red Ghost
+                > 23- Green Scarecrow
+                > 24- Thana
+                > 25- Dragoness
+                > 26- Messenger
+                > 27- Golk
+                > 28- Syren
+                > 29- Sworddevil
+                > 30- Voodoo
+                > 31- Babur
+                > 32- Monk
+                > 33- Zither
+                > 34- Assassin
+                > 35- Yin
+                > 36- Elf
+                > 37- Leviathan
+                > 38- Gladiator
+                > 39- Necro
+
+                Example: @Agatha² partner Blue Rockwell
+                "
+            end
+          
+          else
+            event.respond "Dear #{event.user.mention}, the correct command is @Agatha³ partner __color__ __partner name__."
+        end
+        
+  elsif partnerslist.include? partner1[2].downcase
+  
+        partner = PartnerList.new(partner1[1].downcase,partner1[2].downcase)
+  
+        case partner1[1].downcase
+            when 'red' then
+                    embedcolor = 0xB76357
+                    imageurl = partner.Red_Partners()
+            when 'blue' then
+                    embedcolor = 0x577DB7
+                    imageurl = partner.Blue_Partners()
+            when 'green' then
+                    embedcolor = 0x599159
+                    imageurl = partner.Green_Partners()
+                    
+            else event.respond "Dear #{event.user.mention}, you must choose a proper color (red, blue or green) followed by the partner name from the list \n _**Example**_: @Agatha³ partner blue colonel"
+        end
+  
+    event.channel.send_embed do |embed|
+        embed.colour = embedcolor
+        embed.title = partner.Partner_Title()
+        embed.image = Discordrb::Webhooks::EmbedImage.new(url:imageurl)
+        embed.description = "⚠️ Guides are a collective effort of the BA community"
+        embed.footer = Discordrb::Webhooks::EmbedFooter.new(text: "RAMPAGE #289", icon_url: "https://i.imgur.com/WQtvk5Z.jpg")
+    end
+  
+
+  elsif !(partnerslist.include? partner1[2].downcase)
+  
+        event.respond "Dear #{event.user.mention}, #{partner1[2]} is not yet added to my list! Go bug Rampage about it"
+  end
+  
+end
+
+#==========================================================================================
+
+@agatha_bot.command(:partners) do |event|
   partner1 = event.message.content.split(' ')
   
   if partner1[0] == "<@!740929277318398003>" || partner1[0] == "<@740929277318398003>"

@@ -384,7 +384,7 @@ end
 
 #Partners Guide Function
 
-@agatha_bot.command(:partner) do |event|
+@agatha_bot.command(/^(partner|partners)$/i) do |event|
   partner1 = event.message.content.split(' ')
   
   if partner1[0] == "<@!740929277318398003>" || partner1[0] == "<@740929277318398003>"

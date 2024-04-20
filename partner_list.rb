@@ -50,8 +50,9 @@ class PartnerList
         when 'leviathan' then displayname = 'Leviathan'
         when 'gladiator' then displayname = 'Dragon Gladiator'
         when 'necro' then displayname = 'Princess Necro'
+        when 'bloodhunter' then displayname = 'Bloodhunter'
+        when 'knight' then displayname = 'Knight of Judgment'
       
-        
     end
     
     displayname
@@ -117,6 +118,8 @@ def Red_Partners()
                         when 'leviathan' then image_url = "https://i.imgur.com/LyVjhCA.png"
                         when 'gladiator' then image_url = "https://i.imgur.com/fyNIY0l.png"
                         when 'necro' then image_url = "https://i.imgur.com/nzytGUD.png"
+                        when 'knight' then image_url = "https://i.imgur.com/E4c41Ie.png"
+                        when 'bloodhunter' then image_url = "https://i.imgur.com/wx8zLbd.png"
                         image_url
     end
     
@@ -162,6 +165,8 @@ def Green_Partners()
                         when 'leviathan' then image_url = "https://i.imgur.com/gXQwxbN.png"
                         when 'gladiator' then image_url = "https://i.imgur.com/C6gev3Z.png"
                         when 'necro' then image_url = "https://i.imgur.com/k5u06dJ.png"
+                        when 'knight' then image_url = "https://i.imgur.com/XJDbgGz.png"
+                        when 'bloodhunter' then image_url = "https://i.imgur.com/FSXqp1J.png"
                         
                         
                         image_url
@@ -208,6 +213,8 @@ def Blue_Partners()
                         when 'leviathan' then image_url = "https://i.imgur.com/lW4U2bL.png"
                         when 'gladiator' then image_url = "https://i.imgur.com/q1EvfGN.png"
                         when 'necro' then image_url = "https://i.imgur.com/ogZvGHw.png"
+                        when 'knight' then image_url = "https://i.imgur.com/NdcIQkH.png"
+                        when 'bloodhunter' then image_url = "https://i.imgur.com/mNWa42U.png"
                           
                         image_url
     end
